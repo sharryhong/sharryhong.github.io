@@ -375,6 +375,12 @@ code {
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
 }
+@media only screen and (max-width: 479px) {
+  #header-title .subtitle {
+    line-height: 0;
+    font-size: 1rem;
+  }
+}
 #header-title .logo {
   font-family: 'Indie Flower', cursive;
   color: #fff;
@@ -383,6 +389,11 @@ code {
   text-align: left;
   text-decoration: none;
   background: url("images/snoopy.png") 135px no-repeat;
+}
+@media only screen and (max-width: 479px) {
+  #header-title .logo {
+    padding: 0;
+  }
 }
 .nav-container .nav-icon,
 .nav-container .nav-container-inner #main-nav .main-nav-list-item .main-nav-list-link {

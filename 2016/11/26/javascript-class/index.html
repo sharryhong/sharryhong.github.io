@@ -19,7 +19,7 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
 Class함수가 특정 알고리즘을 포장하는 기술이라면, 클래스는 연관있는 변수와 함수만을 포장하는 기술입니다.클래스로 포장하는 이유는 객체 단위로 코드를 그룹화 하고 재사용하기 위함입니다.
 ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
 <meta property="og:image" content="https://sharryhong.github.io/2016/11/26/javascript-class/js.png">
-<meta property="og:updated_time" content="2016-11-27T11:43:12.230Z">
+<meta property="og:updated_time" content="2016-11-28T04:30:27.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript class (ES5)">
 <meta name="twitter:description" content="완전정복 스터디 3권(웹동네)으로 공부 + 코드 리펙토링 중 입니다. :)해당 코드가 있는 Github 바로가기
@@ -194,21 +194,10 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
 </blockquote>
 <h3 id="프로토타입-방식으로-클래스-만들기"><a href="#프로토타입-방식으로-클래스-만들기" class="headerlink" title="프로토타입 방식으로 클래스 만들기"></a>프로토타입 방식으로 클래스 만들기</h3><p>클래스를 만드는 방법 중 가장 강력한 방법<br>jQuery도 프로토타입 방식으로 만들어졌다. </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function 클래스이름() &#123;</div><div class="line">	this.프로퍼티 = 초개 값;</div><div class="line">	...</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 메서드는 prototype이라는 프로퍼티에 정의한다. </div><div class="line">클래스이름.prototype.메서드 = function() &#123; 	</div><div class="line">	...</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 인스턴스 생성</div><div class="line">var 인스턴스 = new 클래스이름();</div><div class="line">// 메서드 호출</div><div class="line">인스턴스.메서드();</div></pre></td></tr></table></figure>
-<ul>
-<li><p>예 : <a href="https://github.com/sharryhong/TIL/blob/master/javaScript/02_class/js/tabmenu_v02.js" target="_blank" rel="external">tabmenu_v02.js</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">// 2. 함수 단위 -&gt; 프로토타입 방식 클래스 </div><div class="line"></div><div class="line">(function(global, $)&#123;</div><div class="line">&apos;use strict&apos;;</div><div class="line"></div><div class="line">// 인스턴스 생성 	</div><div class="line">var tabTab1 = new TabMenu();</div><div class="line">var tabTab2 = new TabMenu();</div><div class="line"></div><div class="line">// 클래스 생성, 프로퍼티 생성 </div><div class="line">function TabMenu() &#123;</div><div class="line">	this.$tab = null</div><div class="line">	this.$tabMenus = null;</div><div class="line">	this.$selectMenu = null;</div><div class="line">&#125;</div><div class="line">// 메서드 생성, 요소 초기화  </div><div class="line">TabMenu.prototype.init =function(el)&#123;</div><div class="line">	this.$tab = $(el);</div><div class="line">	this.$tabMenus = this.$tab.find(&apos;li&apos;);</div><div class="line">	console.log(this);</div><div class="line">&#125;</div><div class="line"></div><div class="line">TabMenu.prototype.initEvent = function()&#123;</div><div class="line">	var objThis = this;		// 아래에 설명 추가 </div><div class="line">	this.$tabMenus.on(&quot;click&quot;, function()&#123;</div><div class="line">		objThis.setSelectMenu($(this));</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">TabMenu.prototype.setSelectMenu = function($thisMenu)&#123;</div><div class="line">	if(this.$selectMenu)&#123;</div><div class="line">		this.$selectMenu.removeClass(&apos;select&apos;);</div><div class="line">	&#125;</div><div class="line">	this.$selectMenu = $thisMenu;</div><div class="line">	this.$selectMenu.addClass(&apos;select&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">tabTab1.init(&apos;#tabMenu1&apos;);</div><div class="line">tabTab1.initEvent();</div><div class="line"></div><div class="line">tabTab2.init(&apos;#tabMenu2&apos;);</div><div class="line">tabTab2.initEvent();</div><div class="line"></div><div class="line">&#125;)(this, this.jQuery);</div></pre></td></tr></table></figure>
-<ul>
-<li>클릭(이벤트) 전 <code>this</code> 는 아래처럼 구성되어 있다. (크롬 개발자도구)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">TabMenu</div><div class="line">	$selectMenu:null</div><div class="line">	$tab:n.fn.init[1]</div><div class="line">	$tabMenus:n.fn.init[6]</div><div class="line">	__proto__: Object</div><div class="line">	constructor:TabMenu()</div><div class="line">	init: function(el)</div><div class="line">	initEvent: function()</div><div class="line">	setSelectMenu: function($thisMenu)</div><div class="line">	__proto__: Object</div></pre></td></tr></table></figure>
-</li>
-</ul>
 <blockquote>
 <p><strong>특징</strong><br><strong>코드 재사용</strong><br>모든 인스턴스는 <strong>prototype</strong>에 만들어져 있는 <strong>메서드를 공유해서 사용</strong>합니다.<br>자바스크립트에서는 prototype을 이용해 <strong>상속을 구현</strong>합니다. </p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">TabMenu.prototype.initEvent = function()&#123;</div><div class="line">	var objThis = this;</div><div class="line">	this.$tabMenus.on(&quot;click&quot;, function()&#123;</div><div class="line">		objThis.setSelectMenu($(this));</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 위 코드에서  <code>this.$tabMenus.on(&quot;click&quot;,...</code> 클릭을 하면 <code>this</code>가 <strong>클릭한 li요소</strong>로 되어버립니다. <br><br> 따라서 변수 objThis에 본래의 this를 저장하여 <code>objThis.setSelectMenu($(this));</code>로 사용한 것입니다. </p>
-<h3 id="연관-사이트"><a href="#연관-사이트" class="headerlink" title="연관 사이트"></a>연관 사이트</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">MDN - JavaScript Class (ES6)</a></p>
+<h3 id="연관-사이트"><a href="#연관-사이트" class="headerlink" title="연관 사이트"></a>연관 사이트</h3><p><a href="https://sharryhong.github.io/2016/11/26/javascript-tabmenu/">JavaScript 프로토타입 방식으로 클래스 만들기 실습 - 탭 메뉴</a></p>
 
         </div>
         <footer class="article-footer">
@@ -216,7 +205,7 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
 
 
 
-    <a data-url="https://sharryhong.github.io/2016/11/26/javascript-class/" data-id="civzbf5u80004e8nr9mrfai1p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://sharryhong.github.io/2016/11/26/javascript-class/" data-id="ciw1ktx2f00023snrqy952q8w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -346,6 +335,26 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/11/28/javascript-tabmenu/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2016/11/28/javascript-tabmenu/tabmenu.jpg)" alt="javascript tabmenu (ES5_prototype class)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/2016/11/28/javascript-tabmenu/" class="title">javascript tabmenu (ES5_prototype class)</a></p>
+                            <p class="item-date"><time datetime="2016-11-28T04:16:12.000Z" itemprop="datePublished">2016-11-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/11/26/javascript-class-ES6/" class="thumbnail">
     
     
@@ -412,7 +421,7 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/Sass/">Sass</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/Sass/">Sass</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -422,7 +431,7 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -432,7 +441,7 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/">Class</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES5/">ES5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/">Class</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES5/">ES5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TabMenu/">TabMenu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -442,7 +451,7 @@ ES6에서는 class가 생겼지만 아직 이전 버전으로 개">
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Class/" style="font-size: 20px;">Class</a> <a href="/tags/ES5/" style="font-size: 10px;">ES5</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Class/" style="font-size: 20px;">Class</a> <a href="/tags/ES5/" style="font-size: 15px;">ES5</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/TabMenu/" style="font-size: 10px;">TabMenu</a> <a href="/tags/prototype/" style="font-size: 15px;">prototype</a>
         </div>
     </div>
 

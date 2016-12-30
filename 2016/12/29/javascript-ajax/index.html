@@ -17,7 +17,7 @@
 <meta property="og:description" content="AJAX(Asynchronous Javascript And XML) 개념Javascript가 XML을 만나면서 비동기 통신을 한다. -&amp;gt; 요새는 XML보다는 JSON으로 하지만 이름은 그대로 사용하고 있다고 하네요. ^^XML은 자유롭게 마음대로 정할 수 있지만 무겁고 구조화가 어렵다는 단점이 있습니다. 이를 해결하기위해 JSON 등장!
 비동기 통신">
 <meta property="og:image" content="https://sharryhong.github.io/2016/12/29/javascript-ajax/ajax.png">
-<meta property="og:updated_time" content="2016-12-29T16:24:06.584Z">
+<meta property="og:updated_time" content="2016-12-30T05:09:22.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Networking - AJAX 비동기 통신 기술">
 <meta name="twitter:description" content="AJAX(Asynchronous Javascript And XML) 개념Javascript가 XML을 만나면서 비동기 통신을 한다. -&amp;gt; 요새는 XML보다는 JSON으로 하지만 이름은 그대로 사용하고 있다고 하네요. ^^XML은 자유롭게 마음대로 정할 수 있지만 무겁고 구조화가 어렵다는 단점이 있습니다. 이를 해결하기위해 JSON 등장!
@@ -165,7 +165,6 @@
             <img src="/2016/12/29/javascript-ajax/ajax.png" alt="[AJAX 기술]" title="[AJAX 기술]">
 <h2 id="AJAX-Asynchronous-Javascript-And-XML-개념"><a href="#AJAX-Asynchronous-Javascript-And-XML-개념" class="headerlink" title="AJAX(Asynchronous Javascript And XML) 개념"></a>AJAX(Asynchronous Javascript And XML) 개념</h2><p>Javascript가 XML을 만나면서 비동기 통신을 한다. -&gt; 요새는 XML보다는 JSON으로 하지만 이름은 그대로 사용하고 있다고 하네요. ^^<br>XML은 자유롭게 마음대로 정할 수 있지만 무겁고 구조화가 어렵다는 단점이 있습니다. 이를 해결하기위해 JSON 등장!</p>
 <p><strong>비동기 통신</strong> : view가 update하는 동안에도(data 변경 등) 사용자는 다른 일을 할 수 있습니다. 자바스크립트 객체가 특정 데이터(업데이트 등을 할 데이터)를 서버에 주고받고 하여 그 부분만 업데이트합니다.<br><strong>필요한 부분만 별도로 요청, 응답받아 처리</strong>합니다. 모든데이터를 업데이트할 필요없어 <strong>불필요한 대역폭 감소</strong>가 가능하고 <strong>비용절감</strong>을 가져옵니다.</p>
-<p><strong>JSON</strong> : 자바스크립트 객체. AJAX 형태로 받은 문자를 객체로, 객체를 문자로 바꿀 수 있는 능력을 가지고 있습니다.</p>
 <p>장점 : 사용자에게 더 나은 사용 경험 제공. 속도, 비용 절감<br>단점 : 접근성에는 열악합니다. -&gt; 해결하기 위해 등장 : <a href="https://sharryhong.github.io/2016/12/13/web-aria/">WAI-ARIA</a></p>
 <h3 id="AJAX-기술"><a href="#AJAX-기술" class="headerlink" title="AJAX 기술"></a>AJAX 기술</h3><p>브라우저에서 페이지를 이동하지 않고 자바스크립트를 통해 HTTP Request를 보내고 받아 JS에서 처리할 수 있습니다.</p>
 <p>서버 설치 : <code>$ npm install http-server -g</code><br>로컬 서버 연결 : <code>$ http-server -o -a localhost -p 8081</code><br>: <code>http://localhost:8081</code>로 자동으로 띄워줍니다. </p>
@@ -177,7 +176,7 @@
 <h5 id="status-속성"><a href="#status-속성" class="headerlink" title="status 속성"></a>status 속성</h5><p>HTTP response의 응답 헤더에 기록된 코드<br><strong>200 : OK. 정상적으로 data를 보냄</strong><br>404 : Not Found<br>500 : Internal Error</p>
 <h5 id="onreadystatechange-속성"><a href="#onreadystatechange-속성" class="headerlink" title="onreadystatechange 속성"></a>onreadystatechange 속성</h5><p>readyState가 변할 때마다 호출되는 콜백 함수</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.onreadystatechange = function a() &#123;</div><div class="line">	console.log(this.readyState, this.status);</div><div class="line">	if(this.readyState == 4 &amp;&amp; this.status == 200) &#123;</div><div class="line">		console.log(this.response);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">xhr.open(&apos;GET&apos;, &apos;./data.txt&apos;);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
-<h2 id="JSON-JavaScript-Object-Notation"><a href="#JSON-JavaScript-Object-Notation" class="headerlink" title="JSON (JavaScript Object Notation)"></a>JSON (JavaScript Object Notation)</h2><p><strong>자바스크립트 객체를 문자열로 표현</strong>하므로 프로그램간에 전달하기 편리합니다.<br>서버에서 보낼 데이터를 JSON형태로 브라우저로 전송<br>데이터를 수신한 브라우저는 자바스크립트를 통해 데이터를 파싱하고 문서에 반영합니다. </p>
+<h2 id="JSON-JavaScript-Object-Notation"><a href="#JSON-JavaScript-Object-Notation" class="headerlink" title="JSON (JavaScript Object Notation)"></a>JSON (JavaScript Object Notation)</h2><p>AJAX 형태로 받은 문자를 객체로, 객체를 문자로 바꿀 수 있는 능력을 가지고 있습니다.<br><strong>자바스크립트 객체를 문자열로 표현</strong>하므로 프로그램간에 전달하기 편리합니다.<br>서버에서 보낼 데이터를 JSON형태로 브라우저로 전송<br>데이터를 수신한 브라우저는 자바스크립트를 통해 데이터를 파싱하고 문서에 반영합니다. </p>
 <h4 id="JSON-API"><a href="#JSON-API" class="headerlink" title="JSON API"></a>JSON API</h4><p><code>JSON.stringify(object)</code> 메소드 : 인자로 받은 객체를 JSON 문자열로 반환<br><code>JSON.parse(string)</code> 메소드 : 인자로 받은 문자열을 Javascript Object로 변경하여 반환<br>※ undefined, function 은 변환되지 않습니다.</p>
 <h3 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h3><p><a href="http://tryhelloworld.co.kr/courses/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%99%80-%EC%9B%B9-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C" target="_blank" rel="external">helloworld - 자바스크립트와 웹 프론트엔드</a><br><a href="https://github.com/sharryhong/FDS/tree/master/day41-angulerjs" target="_blank" rel="external">My Github 링크</a></p>
 

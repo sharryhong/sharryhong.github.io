@@ -25,7 +25,7 @@
 
 특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현이 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 그래서 2016-12-19일 기준으로">
 <meta property="og:image" content="https://sharryhong.github.io/2016/12/31/project-ajax-movieapi/movie.jpg">
-<meta property="og:updated_time" content="2017-01-02T04:54:34.149Z">
+<meta property="og:updated_time" content="2017-01-02T05:24:21.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Movie 박스오피스 - AJAX, Movie API">
 <meta name="twitter:description" content="결과화면 보기
@@ -182,6 +182,8 @@
 <h3 id="특징-및-기능"><a href="#특징-및-기능" class="headerlink" title="특징 및 기능"></a>특징 및 기능</h3><p>1) <a href="http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do" target="_blank" rel="external">영화진흥위원회가 제공하는 <strong>영화 API</strong>사용</a><br>: 로컬 서버에서는 구현이 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 그래서 2016-12-19일 기준으로 JSON파일을 만들어 연결하였습니다. </p>
 <p>2) <strong><a href="https://sharryhong.github.io/2016/12/29/javascript-ajax">AJAX 비동기 통신 사용</a></strong></p>
 <p>3) template 동적 생성</p>
+<p>4) 랭킹 1~3위는 빨강배경, 4~10위는 회색배경 적용</p>
+<p>5) 순위 변경 data가 0 일땐 <code>녹색 -</code> 표시, 순위 상승시 <code>빨강 화살표</code>, 순위 하락시 data 중 마이너스 삭제하고 <code>파랑 화살표</code> 표시 </p>
 <p>추가 예정 : 영화 상세 페이지<br>디자인 : CGV사이트 참고<br>영화 포스터 : API에서 제공하지 않아 못 넣었습니다. 아쉽네요 ㅜㅜ </p>
 <h3 id="코드-설명"><a href="#코드-설명" class="headerlink" title="코드 설명"></a>코드 설명</h3><p>1) AJAX관련 코드 : <a href="https://sharryhong.github.io/2016/12/29/javascript-ajax">자세한 설명은 여기에서</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(&apos;GET&apos;, &quot;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=발급받은키&amp;targetDt=&quot;+ today);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>

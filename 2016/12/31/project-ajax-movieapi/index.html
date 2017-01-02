@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>실습 - Movie 박스오피스 (AJAX, Movie API) | H-web Blog</title>
+    <title>Movie 박스오피스 - AJAX, Movie API | H-web Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="AJAX,JSON,영화 API" />
@@ -13,28 +13,28 @@
 박스오피스 사이트 : AJAX 통신, Movie API 사용
 코드 리펙토링이 필요한 부분은 추후 업그레이드할 예정입니다. ^^
 
-특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 2016-12-19일 기준으로 JSON">
+특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현이 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 그래서 2016-12-19일 기준으로">
 <meta property="og:type" content="article">
-<meta property="og:title" content="실습 - Movie 박스오피스 (AJAX, Movie API)">
-<meta property="og:url" content="https://sharryhong.github.io/2016/12/31/work-ajax-movieapi/index.html">
+<meta property="og:title" content="Movie 박스오피스 - AJAX, Movie API">
+<meta property="og:url" content="https://sharryhong.github.io/2016/12/31/project-ajax-movieapi/index.html">
 <meta property="og:site_name" content="H-web Blog">
 <meta property="og:description" content="결과화면 보기
 
 박스오피스 사이트 : AJAX 통신, Movie API 사용
 코드 리펙토링이 필요한 부분은 추후 업그레이드할 예정입니다. ^^
 
-특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 2016-12-19일 기준으로 JSON">
-<meta property="og:image" content="https://sharryhong.github.io/2016/12/31/work-ajax-movieapi/movie.jpg">
-<meta property="og:updated_time" content="2016-12-30T16:57:43.512Z">
+특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현이 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 그래서 2016-12-19일 기준으로">
+<meta property="og:image" content="https://sharryhong.github.io/2016/12/31/project-ajax-movieapi/movie.jpg">
+<meta property="og:updated_time" content="2017-01-02T04:54:34.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="실습 - Movie 박스오피스 (AJAX, Movie API)">
+<meta name="twitter:title" content="Movie 박스오피스 - AJAX, Movie API">
 <meta name="twitter:description" content="결과화면 보기
 
 박스오피스 사이트 : AJAX 통신, Movie API 사용
 코드 리펙토링이 필요한 부분은 추후 업그레이드할 예정입니다. ^^
 
-특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 2016-12-19일 기준으로 JSON">
-<meta name="twitter:image" content="https://sharryhong.github.io/2016/12/31/work-ajax-movieapi/movie.jpg">
+특징 및 기능1) 영화진흥위원회가 제공하는 영화 API사용: 로컬 서버에서는 구현이 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 그래서 2016-12-19일 기준으로">
+<meta name="twitter:image" content="https://sharryhong.github.io/2016/12/31/project-ajax-movieapi/movie.jpg">
     
 
     
@@ -86,7 +86,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/">Front-End</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/node-js/">node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/">Portfolio</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/실습/">실습</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/">Front-End</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/node-js/">node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/">Portfolio</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -145,18 +145,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Portfolio/실습/">실습</a>
+    <a class="page-title-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Portfolio/Free-Project/">Free Project</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-work-ajax-movieapi" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-project-ajax-movieapi" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        실습 - Movie 박스오피스 (AJAX, Movie API)
+        Movie 박스오피스 - AJAX, Movie API
         </h1>
     
 
@@ -164,7 +164,7 @@
         
         
             <div class="article-subtitle">
-                <a href="/2016/12/31/work-ajax-movieapi/" class="article-date">
+                <a href="/2016/12/31/project-ajax-movieapi/" class="article-date">
     <time datetime="2016-12-30T16:12:57.000Z" itemprop="datePublished">2016-12-31</time>
 </a>
                 
@@ -175,12 +175,13 @@
         
         <div class="article-entry" itemprop="articleBody">
             <p><a href="https://sharryhong.github.io/javascript/05_AJAX/ajax-json-movieapi.html">결과화면 보기</a></p>
-<img src="/2016/12/31/work-ajax-movieapi/movie.jpg" alt="[결과 이미지]" title="[결과 이미지]">
+<img src="/2016/12/31/project-ajax-movieapi/movie.jpg" alt="[결과 이미지]" title="[결과 이미지]">
 <h3 id="박스오피스-사이트-AJAX-통신-Movie-API-사용"><a href="#박스오피스-사이트-AJAX-통신-Movie-API-사용" class="headerlink" title="박스오피스 사이트 : AJAX 통신, Movie API 사용"></a>박스오피스 사이트 : AJAX 통신, Movie API 사용</h3><blockquote>
 <p>코드 리펙토링이 필요한 부분은 추후 업그레이드할 예정입니다. ^^</p>
 </blockquote>
-<h3 id="특징-및-기능"><a href="#특징-및-기능" class="headerlink" title="특징 및 기능"></a>특징 및 기능</h3><p>1) <a href="http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do" target="_blank" rel="external">영화진흥위원회가 제공하는 <strong>영화 API</strong>사용</a><br>: 로컬 서버에서는 구현 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 2016-12-19일 기준으로 JSON파일을 만들어 연결하였습니다. </p>
+<h3 id="특징-및-기능"><a href="#특징-및-기능" class="headerlink" title="특징 및 기능"></a>특징 및 기능</h3><p>1) <a href="http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do" target="_blank" rel="external">영화진흥위원회가 제공하는 <strong>영화 API</strong>사용</a><br>: 로컬 서버에서는 구현이 잘 되고 있으나 github의 gh-pages에서는 API data가 불러와 지지 않습니다. 그래서 2016-12-19일 기준으로 JSON파일을 만들어 연결하였습니다. </p>
 <p>2) <strong><a href="https://sharryhong.github.io/2016/12/29/javascript-ajax">AJAX 비동기 통신 사용</a></strong></p>
+<p>3) template 동적 생성</p>
 <p>추가 예정 : 영화 상세 페이지<br>디자인 : CGV사이트 참고<br>영화 포스터 : API에서 제공하지 않아 못 넣었습니다. 아쉽네요 ㅜㅜ </p>
 <h3 id="코드-설명"><a href="#코드-설명" class="headerlink" title="코드 설명"></a>코드 설명</h3><p>1) AJAX관련 코드 : <a href="https://sharryhong.github.io/2016/12/29/javascript-ajax">자세한 설명은 여기에서</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(&apos;GET&apos;, &quot;http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=발급받은키&amp;targetDt=&quot;+ today);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
@@ -200,7 +201,7 @@
 
 
 
-    <a data-url="https://sharryhong.github.io/2016/12/31/work-ajax-movieapi/" data-id="cixc1ngva001dvcnrewse2ezf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://sharryhong.github.io/2016/12/31/project-ajax-movieapi/" data-id="cixflz7z50000zwnrb8fyx02k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -320,10 +321,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2016/12/31/work-ajax-movieapi/" class="thumbnail">
+                            <a href="/2016/12/31/project-ajax-movieapi/" class="thumbnail">
     
     
-        <span style="background-image:url(/2016/12/31/work-ajax-movieapi/movie.jpg)" alt="실습 - Movie 박스오피스 (AJAX, Movie API)" class="thumbnail-image"></span>
+        <span style="background-image:url(/2016/12/31/project-ajax-movieapi/movie.jpg)" alt="Movie 박스오피스 - AJAX, Movie API" class="thumbnail-image"></span>
     
     
 </a>
@@ -331,8 +332,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Portfolio/실습/">실습</a></p>
-                            <p class="item-title"><a href="/2016/12/31/work-ajax-movieapi/" class="title">실습 - Movie 박스오피스 (AJAX, Movie API)</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Portfolio/Free-Project/">Free Project</a></p>
+                            <p class="item-title"><a href="/2016/12/31/project-ajax-movieapi/" class="title">Movie 박스오피스 - AJAX, Movie API</a></p>
                             <p class="item-date"><time datetime="2016-12-30T16:12:57.000Z" itemprop="datePublished">2016-12-31</time></p>
                         </div>
                     </li>
@@ -426,7 +427,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bookmark/">Bookmark</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/node-js/">node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/">Portfolio</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/실습/">실습</a><span class="category-list-count">3</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bookmark/">Bookmark</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/node-js/">node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/">Portfolio</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a><span class="category-list-count">3</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -489,7 +490,7 @@
         <div class="container-inner">
             <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
-                <p>&copy; 2016 HS Hong</p>
+                <p>&copy; 2017 HS Hong</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -501,7 +502,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://sharryhong.github.io/2016/12/31/work-ajax-movieapi/';
+    var disqus_url = 'https://sharryhong.github.io/2016/12/31/project-ajax-movieapi/';
     
     (function() {
     var dsq = document.createElement('script');

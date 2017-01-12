@@ -25,7 +25,7 @@ replace 메소드어떤 패턴에 일치하는 일부 또는 모든 부분이 �
 String.prototype.replace()
 문법1str.replace(regexp|">
 <meta property="og:image" content="https://sharryhong.github.io/2017/01/09/javascript-string/js.png">
-<meta property="og:updated_time" content="2017-01-12T16:56:29.999Z">
+<meta property="og:updated_time" content="2017-01-12T17:16:13.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript String 프로퍼티, 메소드">
 <meta name="twitter:description" content="Free Project를 진행하면서 자주 사용하는 프로퍼티, 메소드 등을 계속 추가할 예정입니다. :)
@@ -190,9 +190,10 @@ String.prototype.replace()
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;abc&quot;.repeat(2); // 결과 : // &quot;abcabc&quot;</div></pre></td></tr></table></figure>
 <h6 id="브라우저-호환-IE-오페라-지원안함"><a href="#브라우저-호환-IE-오페라-지원안함" class="headerlink" title="브라우저 호환 : IE, 오페라 지원안함"></a>브라우저 호환 : IE, 오페라 지원안함</h6><p>ES6에서 추가된 메소드입니다. </p>
 <p><sup><a href="#목차">(목차로 돌아가기)</a></sup></p>
-<h2 id="charAt-메소드"><a href="#charAt-메소드" class="headerlink" title="charAt 메소드"></a><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charAt" target="_blank" rel="external">charAt 메소드</a></h2><p>문자열에서 특정 문자를 반환합니다. </p>
+<h2 id="charAt-메소드"><a href="#charAt-메소드" class="headerlink" title="charAt 메소드"></a><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charAt" target="_blank" rel="external">charAt 메소드</a></h2><p>문자열에서 특정 문자(index에 해당하는)를 반환합니다. </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.charAt(index)</div></pre></td></tr></table></figure>
 <p>알고리즘 코드에 올린 내용입니다.<br>마지막 번호 4개를 제외하고 *로 보이게 하기 (핸드폰번호 가리기)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function hide_numbers(s)&#123;</div><div class="line">	var result = &quot;&quot;;</div><div class="line">	var sLength = s.length;</div><div class="line">	for(var i = 0; i &lt; sLength; i++)&#123;</div><div class="line">		result += i &lt; sLength - 4 ? &quot;*&quot; : s.charAt(i);</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(&quot;결과 : &quot; + hide_numbers(&apos;01033334444&apos;));</div></pre></td></tr></table></figure></p>
+<p>문자열의 길이 s.length - 4 보다 작다면, 즉, 마지막 4개 이전의 index 값에는 *를 대입하고, 나머지는 원래의 s.charAt(i)값을 대입합니다. </p>
 
         </div>
         <footer class="article-footer">

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>JavaScript - Module Patton | H-web Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="JavaScript,Module Patton,IIFE,Closure" />
+    
+    <meta name="description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. 
+
+Module : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.
+자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript - Module Patton">
+<meta property="og:url" content="https://sharryhong.github.io/2017/01/16/javascript-module-patton/index.html">
+<meta property="og:site_name" content="H-web Blog">
+<meta property="og:description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. 
+
+Module : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.
+자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modu">
+<meta property="og:image" content="https://sharryhong.github.io/2017/01/16/javascript-module-patton/js.png">
+<meta property="og:updated_time" content="2017-01-16T09:38:09.017Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript - Module Patton">
+<meta name="twitter:description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. 
+
+Module : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.
+자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modu">
+<meta name="twitter:image" content="https://sharryhong.github.io/2017/01/16/javascript-module-patton/js.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.png" />
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo">H-Web</a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Hong&#39;s Front-End Blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/">Front-End</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/Algorism/">Algorism</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/node-js/">node.js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/">Portfolio</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Front-End/JavaScript/">JavaScript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-javascript-module-patton" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        JavaScript - Module Patton
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/01/16/javascript-module-patton/" class="article-date">
+    <time datetime="2017-01-16T08:09:04.000Z" itemprop="datePublished">2017-01-16</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Closure/">Closure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IIFE/">IIFE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Module-Patton/">Module Patton</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/2017/01/16/javascript-module-patton/js.png" alt="[JavaScript]" title="[JavaScript]">
+<blockquote>
+<p>이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. </p>
+</blockquote>
+<p><strong>Module</strong> : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.</p>
+<p>자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.<br>The Module pattern (모듈패턴)<br>Object literal notation (객체 리터럴 표기법)<br>AMD modules<br>CommonJS modules<br>ECMAScript Harmony modules</p>
+<h2 id="Module-Patton-모듈-패텬"><a href="#Module-Patton-모듈-패텬" class="headerlink" title="Module Patton(모듈 패텬)"></a>Module Patton(모듈 패텬)</h2><p>모듈 패턴은 전통적인 소프트웨어 엔지니어링에서 클래스를 위한 private 및 public로 나뉜 캡슐화를 제공하는 방법입니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">// 하나의 기능 컨트롤러 </div><div class="line">var budgetController = (function()&#123;</div><div class="line"></div><div class="line">	// private 영역 </div><div class="line">	// 클로저 내부에 있고 publicTest 메소드를 통해서만 엑세스가 가능하기 때문입니다.</div><div class="line">	var x = 20; // private 프로퍼티 </div><div class="line">	var add = function(a)&#123; // private 메소드 </div><div class="line">		return x + a;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// public 영역 : 필요한 것만 공개합니다.</div><div class="line">	return &#123;</div><div class="line">		// 항상 x와 add에 엑세스하므로 클로저(closure)가 생성됩니다.</div><div class="line">		publicTest: function(b)&#123;</div><div class="line">			return add(b);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// UI에 관한 컨트롤러 </div><div class="line">var UIController = (function()&#123;</div><div class="line">	// code</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">var controller = (function(budgetCtrl, UICtrl)&#123;</div><div class="line">	var z = budgetCtrl.publicTest(5);</div><div class="line"></div><div class="line">	return&#123;</div><div class="line">		anotherPublic: function()&#123;</div><div class="line">			console.log(z);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)(budgetController, UIController);</div></pre></td></tr></table></figure>
+<p>위 코드에서 public으로 공개된 코드를 사용하여 <code>controller.anotherPublic();</code> 이런식으로 budgetController의 publicTest 메소드에 접근합니다. </p>
+<h3 id="IIFE-Immediately-Invoked-Function-Expressions-즉시실행함수"><a href="#IIFE-Immediately-Invoked-Function-Expressions-즉시실행함수" class="headerlink" title="IIFE (Immediately Invoked Function Expressions 즉시실행함수)"></a>IIFE (Immediately Invoked Function Expressions 즉시실행함수)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">	// code</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>위처럼 뒤에 <code>()</code>를 붙이면 함수가 즉시 실행됩니다.<br>함수내부 프로퍼티, 메소드는 외부에서 접근을 못한다는 개념을 사용하여 전역을 오염시키지 않도록 하는 방법입니다.</p>
+<h3 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h3><p><a href="https://www.udemy.com/the-complete-javascript-course/learn/v4/overview" target="_blank" rel="external">Udemy - The Complete JavaScript Course</a><br><a href="http://blog.javarouka.me/2012/02/javascripts-pattern-2-module-pattern.html" target="_blank" rel="external">Nonblock 블로그</a><br><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript" target="_blank" rel="external">Learning JavaScript Design Patterns</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sharryhong.github.io/2017/01/16/javascript-module-patton/" data-id="cixzv4eop000ttsnrnxys2p57" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/sharryhong" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="sharryhong" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/13/algorism-02/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Algorism - 평균구하기 (JavaScript)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/16/javascript-module-patton/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/16/javascript-module-patton/js.png)" alt="JavaScript - Module Patton" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/2017/01/16/javascript-module-patton/" class="title">JavaScript - Module Patton</a></p>
+                            <p class="item-date"><time datetime="2017-01-16T08:09:04.000Z" itemprop="datePublished">2017-01-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/13/algorism-02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/13/algorism-02/al.jpg)" alt="Algorism - 평균구하기 (JavaScript)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2017/01/13/algorism-02/" class="title">Algorism - 평균구하기 (JavaScript)</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T07:21:28.000Z" itemprop="datePublished">2017-01-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/13/algorism-01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/13/algorism-01/al.jpg)" alt="Algorism - 핸드폰번호 가리기 (JavaScript)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2017/01/13/algorism-01/" class="title">Algorism - 핸드폰번호 가리기 (JavaScript)</a></p>
+                            <p class="item-date"><time datetime="2017-01-12T16:35:55.000Z" itemprop="datePublished">2017-01-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/10/project-gallery/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/10/project-gallery/photo.jpg)" alt="Photo Gallery - AJAX, JSON data" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Portfolio/Free-Project/">Free Project</a></p>
+                            <p class="item-title"><a href="/2017/01/10/project-gallery/" class="title">Photo Gallery - AJAX, JSON data</a></p>
+                            <p class="item-date"><time datetime="2017-01-10T06:33:31.000Z" itemprop="datePublished">2017-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/09/javascript-string/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/09/javascript-string/js.png)" alt="JavaScript String 프로퍼티, 메소드" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/2017/01/09/javascript-string/" class="title">JavaScript String 프로퍼티, 메소드</a></p>
+                            <p class="item-date"><time datetime="2017-01-09T04:58:17.000Z" itemprop="datePublished">2017-01-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bookmark/">Bookmark</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/Algorism/">Algorism</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/node-js/">node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/">Portfolio</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a><span class="category-list-count">4</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorism/">Algorism</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/">BOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/">Class</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closure/">Closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/">DOM</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES5/">ES5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gallery/">Gallery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIFE/">IIFE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module-Patton/">Module Patton</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NVM/">NVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nesting/">Nesting</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portfolio/">Portfolio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Responsive/">Responsive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SASS/">SASS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TabMenu/">TabMenu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Variables/">Variables</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WAI-ARIA/">WAI-ARIA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-API-Element/">Web API - Element</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arrow-functions/">arrow functions</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/">grid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript30-com/">javascript30.com</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sli-do/">sli.do</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/도입/">도입</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/반응형/">반응형</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선택자/">선택자</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/아이콘/">아이콘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/영화-API/">영화 API</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹접근성/">웹접근성</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파일-포맷/">파일 포맷</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AJAX/" style="font-size: 15px;">AJAX</a> <a href="/tags/Algorism/" style="font-size: 12.5px;">Algorism</a> <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Class/" style="font-size: 12.5px;">Class</a> <a href="/tags/Closure/" style="font-size: 10px;">Closure</a> <a href="/tags/DOM/" style="font-size: 12.5px;">DOM</a> <a href="/tags/ES5/" style="font-size: 12.5px;">ES5</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/Gallery/" style="font-size: 10px;">Gallery</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/IIFE/" style="font-size: 10px;">IIFE</a> <a href="/tags/JSON/" style="font-size: 15px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Module-Patton/" style="font-size: 10px;">Module Patton</a> <a href="/tags/NVM/" style="font-size: 10px;">NVM</a> <a href="/tags/Nesting/" style="font-size: 10px;">Nesting</a> <a href="/tags/Portfolio/" style="font-size: 15px;">Portfolio</a> <a href="/tags/Responsive/" style="font-size: 10px;">Responsive</a> <a href="/tags/SASS/" style="font-size: 17.5px;">SASS</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/TabMenu/" style="font-size: 10px;">TabMenu</a> <a href="/tags/Variables/" style="font-size: 10px;">Variables</a> <a href="/tags/WAI-ARIA/" style="font-size: 10px;">WAI-ARIA</a> <a href="/tags/Web-API-Element/" style="font-size: 10px;">Web API - Element</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/arrow-functions/" style="font-size: 10px;">arrow functions</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/javascript30-com/" style="font-size: 10px;">javascript30.com</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/prototype/" style="font-size: 12.5px;">prototype</a> <a href="/tags/sli-do/" style="font-size: 10px;">sli.do</a> <a href="/tags/도입/" style="font-size: 10px;">도입</a> <a href="/tags/반응형/" style="font-size: 10px;">반응형</a> <a href="/tags/선택자/" style="font-size: 10px;">선택자</a> <a href="/tags/아이콘/" style="font-size: 10px;">아이콘</a> <a href="/tags/영화-API/" style="font-size: 10px;">영화 API</a> <a href="/tags/웹접근성/" style="font-size: 10px;">웹접근성</a> <a href="/tags/파일-포맷/" style="font-size: 10px;">파일 포맷</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2017 HS Hong</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://sharryhong.github.io/2017/01/16/javascript-module-patton/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

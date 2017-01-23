@@ -3,18 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: const | H-web Blog</title>
+    <title>예산관리 웹애플리케이션 - 01. 설계하기 | H-web Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Hong&apos;s Front-End Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="H-web Blog">
-<meta property="og:url" content="https://sharryhong.github.io/tags/const/index.html">
+        <meta name="keywords" content="JavaScript,모듈패턴,설계" />
+    
+    <meta name="description" content="이번 프로젝트는 udemy 동영상 강의를 보면서 모듈패턴으로 개발해보려고 합니다.영어로 된 강의인데도 강사가 아주 뛰어난지.. 왜 알아듣기 쉬운것이죠.. 자랑이 아니고 진짜임 :)목표는 Structure, Architecture 즉, 데이터 구조 등의 설계부터 제대로 Front-End 개발을 하는 것으로, Firebase로 서버단 구현까지 해보고 싶습니다">
+<meta property="og:type" content="article">
+<meta property="og:title" content="예산관리 웹애플리케이션 - 01. 설계하기">
+<meta property="og:url" content="https://sharryhong.github.io/2017/01/22/portfolio-budget-app/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="Hong&apos;s Front-End Blog">
+<meta property="og:description" content="이번 프로젝트는 udemy 동영상 강의를 보면서 모듈패턴으로 개발해보려고 합니다.영어로 된 강의인데도 강사가 아주 뛰어난지.. 왜 알아듣기 쉬운것이죠.. 자랑이 아니고 진짜임 :)목표는 Structure, Architecture 즉, 데이터 구조 등의 설계부터 제대로 Front-End 개발을 하는 것으로, Firebase로 서버단 구현까지 해보고 싶습니다">
+<meta property="og:updated_time" content="2017-01-22T14:11:14.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H-web Blog">
-<meta name="twitter:description" content="Hong&apos;s Front-End Blog">
+<meta name="twitter:title" content="예산관리 웹애플리케이션 - 01. 설계하기">
+<meta name="twitter:description" content="이번 프로젝트는 udemy 동영상 강의를 보면서 모듈패턴으로 개발해보려고 합니다.영어로 된 강의인데도 강사가 아주 뛰어난지.. 왜 알아듣기 쉬운것이죠.. 자랑이 아니고 진짜임 :)목표는 Structure, Architecture 즉, 데이터 구조 등의 설계부터 제대로 Front-End 개발을 하는 것으로, Firebase로 서버단 구현까지 해보고 싶습니다">
     
 
     
@@ -125,76 +128,166 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>const</em>
+    <a class="page-title-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Portfolio/Free-Project/">Free Project</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-portfolio-budget-app" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/12/25/javascript-es6/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2016/12/25/javascript-es6/js.png)" alt="JavaScript ES6 문법 - Declarations(선언)" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://sharryhong.github.io/2016/12/25/javascript-es6/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/JavaScript/">JavaScript</a>
-            </p>
-            <p class="date"><time datetime="2016-12-24T16:54:47.000Z" itemprop="datePublished">2016-12-25</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/12/25/javascript-es6/">JavaScript ES6 문법 - Declarations(선언)</a>
+        예산관리 웹애플리케이션 - 01. 설계하기
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/01/22/portfolio-budget-app/" class="article-date">
+    <time datetime="2017-01-22T13:11:58.000Z" itemprop="datePublished">2017-01-22</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/모듈패턴/">모듈패턴</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/설계/">설계</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>이번 프로젝트는 udemy 동영상 강의를 보면서 모듈패턴으로 개발해보려고 합니다.<br>영어로 된 강의인데도 강사가 아주 뛰어난지.. 왜 알아듣기 쉬운것이죠.. 자랑이 아니고 진짜임 :)<br>목표는 Structure, Architecture 즉, 데이터 구조 등의 설계부터 제대로 Front-End 개발을 하는 것으로, Firebase로 서버단 구현까지 해보고 싶습니다. </p>
+</blockquote>
+<h3 id="Step-1-애플리케이션을-위해-기본적인-to-do-list-생각하기"><a href="#Step-1-애플리케이션을-위해-기본적인-to-do-list-생각하기" class="headerlink" title="Step 1_ 애플리케이션을 위해 기본적인 to-do list 생각하기"></a>Step 1_ 애플리케이션을 위해 기본적인 to-do list 생각하기</h3><p>: 수입(income), 지출(expenses)의 목록과 금액을 적고 버튼을 클릭하면 UI추가, 계산 등이 일어납니다. </p>
+<h5 id="01-Add-event-handler"><a href="#01-Add-event-handler" class="headerlink" title="01) Add event handler"></a>01) Add event handler</h5><p>(버튼용) 이벤트 핸들러를 추가합니다. </p>
+<h5 id="02-Get-input-values"><a href="#02-Get-input-values" class="headerlink" title="02) Get input values"></a>02) Get input values</h5><p>입력창의 값을 받습니다.</p>
+<h5 id="03-Add-the-new-item-to-our-data-structure"><a href="#03-Add-the-new-item-to-our-data-structure" class="headerlink" title="03) Add the new item to our data structure"></a>03) Add the new item to our data structure</h5><p>데이터 구조에 새 아이템이 추가됩니다.</p>
+<h5 id="04-Add-the-new-item-to-the-UI"><a href="#04-Add-the-new-item-to-the-UI" class="headerlink" title="04) Add the new item to the UI."></a>04) Add the new item to the UI.</h5><p>UI(User Interface)에도 추가됩니다.</p>
+<h4 id="05-Calculate-budget"><a href="#05-Calculate-budget" class="headerlink" title="05) Calculate budget"></a>05) Calculate budget</h4><p>예산을 계산합니다.</p>
+<h4 id="06-Update-the-UI"><a href="#06-Update-the-UI" class="headerlink" title="06) Update the UI."></a>06) Update the UI.</h4><p>UI(User Interface)에도 추가됩니다.</p>
+<h3 id="Step-2-코딩-전에-코드를-구성하는-방법에-대한-고찰-모듈-Modules"><a href="#Step-2-코딩-전에-코드를-구성하는-방법에-대한-고찰-모듈-Modules" class="headerlink" title="Step 2_ 코딩 전에 코드를 구성하는 방법에 대한 고찰 - 모듈(Modules)"></a>Step 2_ 코딩 전에 코드를 구성하는 방법에 대한 고찰 - 모듈(Modules)</h3><ul>
+<li>모듈은 강력한 애플리케이션 설계의 핵심 요소입니다. </li>
+<li>프로젝트의 코드 단위를 깔끔하게 분리하고 체계적으로 해줍니다. </li>
+<li>캡슐화(encapsulate)하여 일부 데이터를 외부에서 접근하지 못하게(private)하고,<br>다른 데이터는 외부에서 접근가능(public)하게 합니다. </li>
+</ul>
+<p>이러한 개념은 프로젝트가 클수록 중요해집니다.<br>기본적으로, 모듈은 코드를 논리적인 부분으로 나누고, 서로 상호작용(interact)하도록 해줍니다.</p>
+<h5 id="이-프로젝트에서는-모듈을-어떻게-나눌-것인가"><a href="#이-프로젝트에서는-모듈을-어떻게-나눌-것인가" class="headerlink" title="이 프로젝트에서는 모듈을 어떻게 나눌 것인가?"></a>이 프로젝트에서는 모듈을 어떻게 나눌 것인가?</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">UI Module</th>
+<th style="text-align:left">Data Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">02) Get input values</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">04) Add the new item to the UI.</td>
+<td style="text-align:left">03) Add the new item to our data structure</td>
+</tr>
+<tr>
+<td style="text-align:left">06) Update the UI</td>
+<td style="text-align:left">05) Calculate budget</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Controller Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">01) Add event handler</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Step-3-모듈패턴-Module-Patten"><a href="#Step-3-모듈패턴-Module-Patten" class="headerlink" title="Step 3_ 모듈패턴(Module Patten)"></a>Step 3_ 모듈패턴(Module Patten)</h3><p>JavaScript의 인기있는 패턴 중 하나인 모듈패턴 방식으로 개발하고자 합니다. </p>
+<h5 id="관련-포스팅-모듈패턴-Module-Patten"><a href="#관련-포스팅-모듈패턴-Module-Patten" class="headerlink" title="관련 포스팅 : 모듈패턴(Module Patten)"></a>관련 포스팅 : <a href="https://sharryhong.github.io/2017/01/16/javascript-module-patton/">모듈패턴(Module Patten)</a></h5>
+        </div>
+        <footer class="article-footer">
             
-ES6 변수, 상수 선언 키워드let : 정의된 블록내에서만 존재하는 변수 선언 (지역 변수)const : 상수(변하지 않는 값) 선언
-var : ES6문법 이전부터 사용하던 변수 선언 (전역 변수)
-1234var x = &apos;global&apos;;	// 전역 변수 let y = &apos;global&apos;;	// 지역 변수 console.l
-        </p>
+
+
+
+    <a data-url="https://sharryhong.github.io/2017/01/22/portfolio-budget-app/" data-id="ciy9lm2w8001lxknr10kolv3d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -216,6 +309,19 @@ var : ES6문법 이전부터 사용하던 변수 선언 (전역 변수)
     </div>
     <div class="github-card" data-github="sharryhong" data-height="" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/21/link-js-convention/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">NHN JavaScript Convention</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -410,11 +516,13 @@ var : ES6문법 이전부터 사용하던 변수 선언 (전역 변수)
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://sharryhong.github.io/2017/01/22/portfolio-budget-app/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

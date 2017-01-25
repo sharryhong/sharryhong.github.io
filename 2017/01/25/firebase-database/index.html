@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Firebase - Realtime Database | H-web Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Firebase,Realtime Database" />
+    
+    <meta name="description" content="Firebase on the Web - Firecasts Youtube
+실제 데이터를 구현하고 싶은 욕망이 항상 있었는데, 이번 예산관리 웹앱을 만들면서 파이어베이스로 디비구현 및 실제 데이터를 붙여보고 싶었습니다.파이어베이스가 스타트업으로 시작해서 구글에서 인수했다고 들었는데.. 능력자들! 
+
+firebase로 할 수 있는 것들 (web기준)
+인증, 스">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Firebase - Realtime Database">
+<meta property="og:url" content="https://sharryhong.github.io/2017/01/25/firebase-database/index.html">
+<meta property="og:site_name" content="H-web Blog">
+<meta property="og:description" content="Firebase on the Web - Firecasts Youtube
+실제 데이터를 구현하고 싶은 욕망이 항상 있었는데, 이번 예산관리 웹앱을 만들면서 파이어베이스로 디비구현 및 실제 데이터를 붙여보고 싶었습니다.파이어베이스가 스타트업으로 시작해서 구글에서 인수했다고 들었는데.. 능력자들! 
+
+firebase로 할 수 있는 것들 (web기준)
+인증, 스">
+<meta property="og:image" content="https://sharryhong.github.io/2017/01/25/firebase-database/firebase.png">
+<meta property="og:updated_time" content="2017-01-25T07:13:04.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Firebase - Realtime Database">
+<meta name="twitter:description" content="Firebase on the Web - Firecasts Youtube
+실제 데이터를 구현하고 싶은 욕망이 항상 있었는데, 이번 예산관리 웹앱을 만들면서 파이어베이스로 디비구현 및 실제 데이터를 붙여보고 싶었습니다.파이어베이스가 스타트업으로 시작해서 구글에서 인수했다고 들었는데.. 능력자들! 
+
+firebase로 할 수 있는 것들 (web기준)
+인증, 스">
+<meta name="twitter:image" content="https://sharryhong.github.io/2017/01/25/firebase-database/firebase.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.png" />
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo">H-Web</a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Hong&#39;s Front-End Blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/">Front-End</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/">Portfolio</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/">plus forWeb!</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/Algorism/">Algorism</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/Firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/node-js/">node.js</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/plus-forWeb/">plus forWeb!</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/plus-forWeb/Firebase/">Firebase</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-firebase-database" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Firebase - Realtime Database
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/01/25/firebase-database/" class="article-date">
+    <time datetime="2017-01-25T04:55:09.000Z" itemprop="datePublished">2017-01-25</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Firebase/">Firebase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Realtime-Database/">Realtime Database</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/2017/01/25/firebase-database/firebase.png" alt="[Firebase]" title="[Firebase]">
+<h2 id="Firebase-on-the-Web-Firecasts-Youtube"><a href="#Firebase-on-the-Web-Firecasts-Youtube" class="headerlink" title="Firebase on the Web - Firecasts Youtube"></a><a href="https://www.youtube.com/playlist?list=PLl-K7zZEsYLmnJ_FpMOZgyg6XcIGBu2OX" target="_blank" rel="external">Firebase on the Web - Firecasts Youtube</a></h2><blockquote>
+<p>실제 데이터를 구현하고 싶은 욕망이 항상 있었는데, 이번 예산관리 웹앱을 만들면서 파이어베이스로 디비구현 및 실제 데이터를 붙여보고 싶었습니다.<br>파이어베이스가 스타트업으로 시작해서 구글에서 인수했다고 들었는데.. 능력자들! </p>
+</blockquote>
+<h4 id="firebase로-할-수-있는-것들-web기준"><a href="#firebase로-할-수-있는-것들-web기준" class="headerlink" title="firebase로 할 수 있는 것들 (web기준)"></a>firebase로 할 수 있는 것들 (web기준)</h4><ul>
+<li>인증, 스토리지, 호스팅, firebase 클라우드의 웹푸시 알림 등 </li>
+<li>Angular 1 &amp; 2, Polymer, React, Ember등의 자바스크립트 프레임워크 연동</li>
+</ul>
+<h2 id="Realtime-Database-간단하게-구현해보기"><a href="#Realtime-Database-간단하게-구현해보기" class="headerlink" title="Realtime Database - 간단하게 구현해보기"></a>Realtime Database - 간단하게 구현해보기</h2><h4 id="Firebase-시작"><a href="#Firebase-시작" class="headerlink" title="Firebase 시작!"></a>Firebase 시작!</h4><ol>
+<li><a href="https://firebase.google.com" target="_blank" rel="external">https://firebase.google.com</a> 간단하게 가입 후 무료로 시작하기, <a href="https://console.firebase.google.com" target="_blank" rel="external">콘솔로 이동</a>합니다. </li>
+<li>Create new project 버튼 클릭, project name을 정하고 create project</li>
+<li>overview창에서 Add Firebase to your web app 클릭하면 시작에 필요한 모델들과 초기화 코드(initialization code)가 나옵니다.</li>
+</ol>
+<h4 id="html-js에-초기화-코드-넣기"><a href="#html-js에-초기화-코드-넣기" class="headerlink" title="html, js에 초기화 코드 넣기"></a>html, js에 초기화 코드 넣기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://www.gstatic.com/firebasejs/3.6.6/firebase.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// Initialize Firebase</div><div class="line">var config = &#123;</div><div class="line">apiKey: &quot;---&quot;,</div><div class="line">authDomain: &quot;---&quot;,---,</div><div class="line">storageBucket: &quot;---&quot;,</div><div class="line">messagingSenderId: &quot;---&quot;</div><div class="line">&#125;;</div><div class="line">firebase.initializeApp(config);</div></pre></td></tr></table></figure>
+<p>이 작업만 하면 기본적인 파이어베이스 세팅이 됩니다. </p>
+<blockquote>
+<p>여기서 잠깐!<br>Windows OS 에서 크롬에서는 overview창이 열리지 않습니다. 아마.. 큰 문제인거 같은데 파이어베이스에서 모르는건지..<br>유투브 댓글을 보니 몇명이 써놨더라고요. 저만 그런지 알고 처음에 당황했는데, 혹시 몰라서 모바일(사파리)과 파이어폭스에서 열어보니 잘됩니다.. ㅋㅋ </p>
+</blockquote>
+<h2 id="Realtime-Events-목차"><a href="#Realtime-Events-목차" class="headerlink" title="Realtime Events 목차"></a>Realtime Events 목차</h2><p><a href="#value-events">value events</a><br><a href="#child-events">child events</a></p>
+<h4 id="value-events"><a href="#value-events" class="headerlink" title="value events"></a>value events</h4><p>객체, 데이터 등을 동기화시키는 데 좋습니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line"></div><div class="line">  // Initialize Firebase</div><div class="line">  var config = &#123;</div><div class="line">    apiKey: &quot;---&quot;,</div><div class="line">    authDomain: ---&quot;,</div><div class="line">    databaseURL: &quot;---&quot;,</div><div class="line">    storageBucket: &quot;---&quot;,</div><div class="line">    messagingSenderId: &quot;---&quot;</div><div class="line">  &#125;;</div><div class="line">  firebase.initializeApp(config);</div><div class="line"></div><div class="line">  // get element</div><div class="line">  const preObject = document.getElementById(&apos;object&apos;);</div><div class="line"></div><div class="line">  // database 참조를 만들어서 data를 실시간으로 동기화해보자.</div><div class="line">  // create references </div><div class="line">  const dbRefObject = firebase.database().ref().child(&apos;object&apos;);</div><div class="line"></div><div class="line">  dbRefObject.on(&apos;value&apos;, snap =&gt; preObject.innerText = JSON.stringify(snap.val(), null, 3)); // 여백 3 </div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h5 id="ref-함수"><a href="#ref-함수" class="headerlink" title="ref() 함수"></a>ref() 함수</h5><p>database의 root로 접근하게 해주고, 객체의 child키를 생성합니다. 이제 필요한 값을 저장할 수 있습니다. </p>
+<h5 id="on-메서드"><a href="#on-메서드" class="headerlink" title="on() 메서드"></a>on() 메서드</h5><p>가장 강력한 메서드로서 </p>
+<p>첫 매개변수 : 이벤트 타입. 실시간 동기화를 어느 단계까지 할지를 정해줍니다.<br><strong>value</strong> : database의 변경이 있을 때 매번 콜백함수를 호출합니다.</p>
+<p>두번째 매개변수 : 콜백함수<br><strong>snap</strong> : 콜백함수의 매개변수로서 ‘데이터 스냅샷’이라고 불립니다.<br>데이터 스냅샷은 key name, 자식요소 반복방식 등을 return합니다.<br>그 값을 얻고 싶으면 지금처럼 .val()함수를 호출합니다. 값이 객체라면 객체 전체를 동기화합니다.<br>만약에 객체의 한 value가 바뀌어도, 객체 전체를 update하는데, 이를 state 동기화라고 합니다.</p>
+<h4 id="child-events"><a href="#child-events" class="headerlink" title="child events"></a>child events</h4><p>데이터 동기화를 미세하게 조절할 수 있습니다. 특히 list를 다룰 때 유용합니다.<br>어떤 요소가 add, remove, update 되었을 때 특정 child 이벤트에 동기화시키고 싶을 때 사용합니다.</p>
+<p>Firebase Overview/Database에서 <code>object</code>객체 프로퍼티에 JSON 객체를 넣어봅니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">object</div><div class="line">  hobbies: &#123; &quot;coffee&quot; : &quot;coffee&quot; &#125;</div><div class="line"></div><div class="line">// 이렇게 하면 key가 coffee이고 값이 coffee인 JSON객체가 부여됩니다. </div><div class="line">// 이렇게 리스트를 추가합니다.</div></pre></td></tr></table></figure></p>
+<p>js파일에서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// child_added : 리스트에 자식이 추가될 때만 작동합니다. </div><div class="line">// 처음에 모든 리스트가 동기화되며, 그 후엔 변한 부분만 동기화합니다. </div><div class="line">dbRefList.on(&apos;child_added&apos;, snap =&gt; &#123;</div><div class="line"></div><div class="line">  const li = document.createElement(&apos;li&apos;);</div><div class="line">  // 각 항목의 key name을 li의 id값으로 준다.</div><div class="line">  li.id = snap.key;  </div><div class="line">  li.innerText = snap.val();</div><div class="line">  ulList.appendChild(li);</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">// child_changed : 자식이 바뀔때만 작동  </div><div class="line">dbRefList.on(&apos;child_changed&apos;, snap =&gt; &#123;</div><div class="line"></div><div class="line">  const liChanged = document.getElementById(snap.key);</div><div class="line">  liChanged.innerText = snap.val();</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">// child_changed : 자식이 삭제될 때만 작동  </div><div class="line">dbRefList.on(&apos;child_removed&apos;, snap =&gt; &#123;</div><div class="line"></div><div class="line">  const liRemove = document.getElementById(snap.key);</div><div class="line">  liRemove.remove();</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sharryhong.github.io/2017/01/25/firebase-database/" data-id="ciycma1s4000bx0nryf84fxv3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/sharryhong" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="sharryhong" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/24/algorism13-fibonacci/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Algorism - 피보나치 수열 (JavaScript)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/25/firebase-database/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/25/firebase-database/firebase.png)" alt="Firebase - Realtime Database" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/plus-forWeb/">plus forWeb!</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/plus-forWeb/Firebase/">Firebase</a></p>
+                            <p class="item-title"><a href="/2017/01/25/firebase-database/" class="title">Firebase - Realtime Database</a></p>
+                            <p class="item-date"><time datetime="2017-01-25T04:55:09.000Z" itemprop="datePublished">2017-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/24/algorism13-fibonacci/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/24/algorism13-fibonacci/al.jpg)" alt="Algorism - 피보나치 수열 (JavaScript)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/plus-forWeb/">plus forWeb!</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/plus-forWeb/Algorism/">Algorism</a></p>
+                            <p class="item-title"><a href="/2017/01/24/algorism13-fibonacci/" class="title">Algorism - 피보나치 수열 (JavaScript)</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T06:16:24.000Z" itemprop="datePublished">2017-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/22/portfolio-budget-app/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Portfolio/Free-Project/">Free Project</a></p>
+                            <p class="item-title"><a href="/2017/01/22/portfolio-budget-app/" class="title">예산관리 웹애플리케이션 - 01. 설계하기</a></p>
+                            <p class="item-date"><time datetime="2017-01-22T13:11:58.000Z" itemprop="datePublished">2017-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/link-js-convention/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/21/link-js-convention/javascript-styleguides.jpg)" alt="NHN JavaScript Convention" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Bookmark/">Bookmark</a></p>
+                            <p class="item-title"><a href="/2017/01/21/link-js-convention/" class="title">NHN JavaScript Convention</a></p>
+                            <p class="item-date"><time datetime="2017-01-21T05:15:52.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/20/javascript-study01/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/01/20/javascript-study01/study_group.jpg)" alt="스터디그룹모임 - JavaScript 성능향상을 위한 노력, OOP(객체지향 프로그래밍)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-End/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/2017/01/20/javascript-study01/" class="title">스터디그룹모임 - JavaScript 성능향상을 위한 노력, OOP(객체지향 프로그래밍)</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T08:47:16.000Z" itemprop="datePublished">2017-01-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bookmark/">Bookmark</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/">Portfolio</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/">plus forWeb!</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/Algorism/">Algorism</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/Firebase/">Firebase</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/node-js/">node.js</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorism/">Algorism</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM/">BOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/">Class</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closure/">Closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Convention/">Convention</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/">DOM</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES5/">ES5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gallery/">Gallery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIFE/">IIFE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Module-Patton/">Module Patton</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NVM/">NVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nesting/">Nesting</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portfolio/">Portfolio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Realtime-Database/">Realtime Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Responsive/">Responsive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SASS/">SASS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TabMenu/">TabMenu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Variables/">Variables</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WAI-ARIA/">WAI-ARIA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-API-Element/">Web API - Element</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arrow-functions/">arrow functions</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grid/">grid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript30-com/">javascript30.com</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sli-do/">sli.do</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/도입/">도입</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/모듈패턴/">모듈패턴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/반응형/">반응형</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선택자/">선택자</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/설계/">설계</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/성능향상/">성능향상</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/아이콘/">아이콘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/영화-API/">영화 API</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹접근성/">웹접근성</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파일-포맷/">파일 포맷</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AJAX/" style="font-size: 15px;">AJAX</a> <a href="/tags/Algorism/" style="font-size: 17.5px;">Algorism</a> <a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Class/" style="font-size: 12.5px;">Class</a> <a href="/tags/Closure/" style="font-size: 10px;">Closure</a> <a href="/tags/Convention/" style="font-size: 10px;">Convention</a> <a href="/tags/DOM/" style="font-size: 12.5px;">DOM</a> <a href="/tags/ES5/" style="font-size: 12.5px;">ES5</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/Firebase/" style="font-size: 10px;">Firebase</a> <a href="/tags/Gallery/" style="font-size: 10px;">Gallery</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/IIFE/" style="font-size: 10px;">IIFE</a> <a href="/tags/JSON/" style="font-size: 15px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Module-Patton/" style="font-size: 10px;">Module Patton</a> <a href="/tags/NVM/" style="font-size: 10px;">NVM</a> <a href="/tags/Nesting/" style="font-size: 10px;">Nesting</a> <a href="/tags/Portfolio/" style="font-size: 15px;">Portfolio</a> <a href="/tags/Realtime-Database/" style="font-size: 10px;">Realtime Database</a> <a href="/tags/Responsive/" style="font-size: 10px;">Responsive</a> <a href="/tags/SASS/" style="font-size: 17.5px;">SASS</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/TabMenu/" style="font-size: 10px;">TabMenu</a> <a href="/tags/Variables/" style="font-size: 10px;">Variables</a> <a href="/tags/WAI-ARIA/" style="font-size: 10px;">WAI-ARIA</a> <a href="/tags/Web-API-Element/" style="font-size: 10px;">Web API - Element</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/arrow-functions/" style="font-size: 10px;">arrow functions</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/javascript30-com/" style="font-size: 10px;">javascript30.com</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/prototype/" style="font-size: 12.5px;">prototype</a> <a href="/tags/sli-do/" style="font-size: 10px;">sli.do</a> <a href="/tags/도입/" style="font-size: 10px;">도입</a> <a href="/tags/모듈패턴/" style="font-size: 10px;">모듈패턴</a> <a href="/tags/반응형/" style="font-size: 10px;">반응형</a> <a href="/tags/선택자/" style="font-size: 10px;">선택자</a> <a href="/tags/설계/" style="font-size: 10px;">설계</a> <a href="/tags/성능향상/" style="font-size: 10px;">성능향상</a> <a href="/tags/아이콘/" style="font-size: 10px;">아이콘</a> <a href="/tags/영화-API/" style="font-size: 10px;">영화 API</a> <a href="/tags/웹접근성/" style="font-size: 10px;">웹접근성</a> <a href="/tags/파일-포맷/" style="font-size: 10px;">파일 포맷</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2017 HS Hong</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://sharryhong.github.io/2017/01/25/firebase-database/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

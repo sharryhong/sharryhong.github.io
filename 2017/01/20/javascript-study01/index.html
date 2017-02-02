@@ -19,7 +19,7 @@
 
 1. JavaScript 성능향상을 위한 고려조건문의 경우 if else보다는 아닐경우 빠져나오는 경우를 먼저 설정하면 성능에 좋다고 합니다.아래 예의 경우">
 <meta property="og:image" content="https://sharryhong.github.io/2017/01/20/javascript-study01/study_group.jpg">
-<meta property="og:updated_time" content="2017-01-24T07:43:33.245Z">
+<meta property="og:updated_time" content="2017-02-02T13:43:16.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="스터디그룹모임 - JavaScript 성능향상을 위한 노력, OOP(객체지향 프로그래밍)">
 <meta name="twitter:description" content="스터디를 이어오고 있었는데 이제는 1주에 한번 서로 깨달은 점을 나누고,궁금한 것은 공부해와서 다음에 나누기로 하였습니다.이번주에 서로 나눈 내용은 JS성능향상을 위한 코드 리펙토링과 객체지향!
@@ -176,16 +176,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tar.addEventListener(&quot;focusout&quot;,function(evt)&#123;</div><div class="line">	// do something</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>1) 이벤트와 함수를 분리하여 직관적으로 코드 리펙토링 해봅니다.<br>여기서 addText는 콜백함수이므로 focusout시 실행되므로 <code>()</code>를 적을 필요 없습니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function addText(evt)&#123;</div><div class="line">  // do something</div><div class="line">&#125;</div><div class="line"></div><div class="line">tar.addEventListener(&quot;focusout&quot;, addText);</div></pre></td></tr></table></figure></p>
 <p>2) 한번 더! 네임스페이스(전역에 하나의 객체만 추가하여 사용) 방식으로 코드 리펙토링<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var addHandler = &#123;</div><div class="line">  &apos;addText&apos; = function() &#123;</div><div class="line">    // do something</div><div class="line">  &#125;,</div><div class="line">  &apos;addNode&apos; = function() &#123;</div><div class="line">    // do something</div><div class="line">  &#125;,</div><div class="line">  &apos;addSomething&apos; = function() &#123;</div><div class="line">    // do something</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line"></div><div class="line">tar.addEventListener(&quot;focusout&quot;, addHandler.addText);</div></pre></td></tr></table></figure></p>
-<h3 id="3-OOP-Object-Oriented-Programming-객체지향-프로그래밍"><a href="#3-OOP-Object-Oriented-Programming-객체지향-프로그래밍" class="headerlink" title="3. OOP(Object Oriented Programming) 객체지향 프로그래밍"></a>3. OOP(Object Oriented Programming) 객체지향 프로그래밍</h3><h5 id="절차지향-프로그래밍과-비교해-보자"><a href="#절차지향-프로그래밍과-비교해-보자" class="headerlink" title="절차지향 프로그래밍과 비교해 보자"></a>절차지향 프로그래밍과 비교해 보자</h5><p>절차지향은 문제를 순차적으로 호출해 처리하는 방식으로, 함수 단위 코딩을 하는 경우가 대표적인 예입니다.<br>전역 데이터를 매개변수 값으로 공유해서 사용하는 구조이기 때문에 데이터가 보호되지 않는다는 치명적인 단점이 있습니다.<br>또한 하나의 프로젝트를 여러사람이 작업할 경우에도 적합하지 않습니다.<br>이러다보니 비교적 간단한 프로젝트에 주로 사용합니다.</p>
-<h5 id="객체지향이란"><a href="#객체지향이란" class="headerlink" title="객체지향이란?"></a>객체지향이란?</h5><p>문제를 여러 개의 객체 단위로 나눠 작업하는 방식으로 오늘날 가장 많이 사용하는 대표적인 프로그래밍 방식입니다.<br>객체지향 프로그래밍의 기본 단위는 클래스 단위 프로그래밍으로서<br>클래스를 이용해 연관 있는 데이터부분(변수, 프로퍼티)과 처리부분(함수, 메소드)을 하나로 묶어 객체(인스턴스)를 생성해 사용합니다. </p>
-<p>4가지 특징인 추상화, 캡슐화, 상속, 다형성을 골고루 사용해 코딩하는 프로그래밍을 객체지향이라고 합니다.<br>프로그래밍 선배님들이 어떻게 하면 유지보수하기 쉽고 중복되지 않는 멋진 코드를 만들 수 있을까 하고 노력한 끝에 완성한 최상의 결과물!</p>
-<p><strong>장점</strong> : 프로젝트를 독립적인 객체 단위로 분리해서 작업할 수 있으므로 여러 개발자와 협업해 규모가 큰 프로젝트를 진행할 수 있습니다. </p>
-<h5 id="추상화-abstraction"><a href="#추상화-abstraction" class="headerlink" title="추상화(abstraction)"></a>추상화(abstraction)</h5><p>설계하는 작업 자체를 나타냅니다. 프로퍼티와 메서드를 정의 하는 작업으로 이름을 작성하는 선언 부분만 만들 뿐 소스는 구현하지 않습니다. </p>
-<h5 id="캡슐화-encapsulation"><a href="#캡슐화-encapsulation" class="headerlink" title="캡슐화(encapsulation)"></a>캡슐화(encapsulation)</h5><p>어떤 프로퍼티와 메서드는 외부에서 접근가능(public), 외부에서 접근하지 못하게(private) 하는 작업을 말합니다. </p>
-<h5 id="상속-inheritance"><a href="#상속-inheritance" class="headerlink" title="상속(inheritance)"></a>상속(inheritance)</h5><p>부모 클래스의 프로퍼티와 메서드를 자식클래스가 물려 받는 것입니다. 즉, 자식클래스에서 부모클래스의 기능을 사용할 수 있습니다.</p>
-<h5 id="다형성-polymorphism"><a href="#다형성-polymorphism" class="headerlink" title="다형성(polymorphism)"></a>다형성(polymorphism)</h5><p>객체지향의 핵심입니다. 선언 부분과 구현 부분을 나눠 다양하게 처리할 수 있습니다.<br>다형성을 적용해 코드를 만들게 되면 특정 작업을 소스 수정을 거의 하지 않고 다양한 방법으로 연결해서 만들 수 있습니다. </p>
-<h3 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h3><p>웹 프론트엔드 개발자를 위한, 자바스크립트+jQuery 완전정복 스터디 - 김춘경(딴동네)</p>
-
+<h3 id="3-OOP-Object-Oriented-Programming-객체지향-프로그래밍-포스팅"><a href="#3-OOP-Object-Oriented-Programming-객체지향-프로그래밍-포스팅" class="headerlink" title="3. OOP(Object Oriented Programming) 객체지향 프로그래밍 포스팅"></a><a href="https://sharryhong.github.io/2017/02/02/javascript-oop01/">3. OOP(Object Oriented Programming) 객체지향 프로그래밍 포스팅</a></h3>
         </div>
         <footer class="article-footer">
             

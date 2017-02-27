@@ -8,26 +8,26 @@
     
         <meta name="keywords" content="JavaScript,Array" />
     
-    <meta name="description" content="반복자 함수 2. find, every, some, reduce목차find 메소드
+    <meta name="description" content="반복자 함수 2. find, every, some, reduce (추후 추가)목차find 메소드
 find 메소드콜백함수가 요구하는 조건을 만족하는 첫번째 값을 하나 반환합니다. 없으면 undefined를 반환합니다. 
 1arr.find(callback[, thisArg])
-예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.주어진 문제 :12345">
+예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.주어진 문">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript Array - find, every, some, reduce 내장 메소드">
 <meta property="og:url" content="https://sharryhong.github.io/2017/02/13/javascript-array03/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="반복자 함수 2. find, every, some, reduce목차find 메소드
+<meta property="og:description" content="반복자 함수 2. find, every, some, reduce (추후 추가)목차find 메소드
 find 메소드콜백함수가 요구하는 조건을 만족하는 첫번째 값을 하나 반환합니다. 없으면 undefined를 반환합니다. 
 1arr.find(callback[, thisArg])
-예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.주어진 문제 :12345">
+예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.주어진 문">
 <meta property="og:image" content="https://sharryhong.github.io/2017/02/13/javascript-array03/js.png">
-<meta property="og:updated_time" content="2017-02-13T08:38:22.332Z">
+<meta property="og:updated_time" content="2017-02-27T14:56:55.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Array - find, every, some, reduce 내장 메소드">
-<meta name="twitter:description" content="반복자 함수 2. find, every, some, reduce목차find 메소드
+<meta name="twitter:description" content="반복자 함수 2. find, every, some, reduce (추후 추가)목차find 메소드
 find 메소드콜백함수가 요구하는 조건을 만족하는 첫번째 값을 하나 반환합니다. 없으면 undefined를 반환합니다. 
 1arr.find(callback[, thisArg])
-예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.주어진 문제 :12345">
+예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.주어진 문">
 <meta name="twitter:image" content="https://sharryhong.github.io/2017/02/13/javascript-array03/js.png">
     
 
@@ -169,7 +169,7 @@ find 메소드콜백함수가 요구하는 조건을 만족하는 첫번째 값�
         
         <div class="article-entry" itemprop="articleBody">
             <img src="/2017/02/13/javascript-array03/js.png" alt="[JavaScript]" title="[JavaScript]">
-<h2 id="반복자-함수-2-find-every-some-reduce"><a href="#반복자-함수-2-find-every-some-reduce" class="headerlink" title="반복자 함수 2. find, every, some, reduce"></a>반복자 함수 2. find, every, some, reduce</h2><h4 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h4><p><a href="#find-메소드">find 메소드</a></p>
+<h2 id="반복자-함수-2-find-every-some-reduce-추후-추가"><a href="#반복자-함수-2-find-every-some-reduce-추후-추가" class="headerlink" title="반복자 함수 2. find, every, some, reduce (추후 추가)"></a>반복자 함수 2. find, every, some, reduce (추후 추가)</h2><h4 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h4><p><a href="#find-메소드">find 메소드</a></p>
 <h2 id="find-메소드"><a href="#find-메소드" class="headerlink" title="find 메소드"></a><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="external">find 메소드</a></h2><p>콜백함수가 요구하는 조건을 만족하는 첫번째 값을 하나 반환합니다. 없으면 undefined를 반환합니다. </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr.find(callback[, thisArg])</div></pre></td></tr></table></figure>
 <h5 id="예-특정-프로퍼티-값을-가지는-첫번재-객체를-찾는-함수를-완성해보세요"><a href="#예-특정-프로퍼티-값을-가지는-첫번재-객체를-찾는-함수를-완성해보세요" class="headerlink" title="예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요."></a>예: 특정 프로퍼티, 값을 가지는 첫번재 객체를 찾는 함수를 완성해보세요.</h5><p>주어진 문제 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var ladders = [</div><div class="line">  &#123; id: 1, height: 20 &#125;,</div><div class="line">  &#123; id: 3, height: 25 &#125;</div><div class="line">];</div><div class="line"></div><div class="line">function findWhere(array, criteria) &#123;</div><div class="line">  // array 중에서 criteria 에 해당하는 첫번째 객체를 찾아 반환하는 함수 만들기 </div><div class="line">&#125;</div><div class="line"></div><div class="line">findWhere(ladders, &#123; height: 25 &#125;);</div></pre></td></tr></table></figure></p>

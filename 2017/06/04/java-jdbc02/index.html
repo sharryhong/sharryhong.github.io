@@ -3,23 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>스터디그룹모임 - JavaScript의 this | H-web Blog</title>
+    <title>JDBC 프로그래밍 &amp; java.sql 패키지 | H-web Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="JavaScript,this" />
+        <meta name="keywords" content="JDBC" />
     
-    <meta name="description" content="이번주에 우리 스터디모임에서 나눈 주제는 크로스브라우징, JS ES6 - Arrow Function, 원시데이터와 참조데이터였습니다.Arrow Function에 대해서는 제가 발표자였는데, JavaScript의 this에 대해 좀 더 자세하게 다뤄야할 필요성이 느껴지더라고요. 잘 알고있다고 생각했는데 클래스, 인스턴스, 메소드 등의 this에 대해서 정">
+    <meta name="description" content="java.sql 패키지의 주요 인터페이스 (mysql의 경우)java.sql.Driver (=&amp;gt; 구현 com.mysql.jdbc.Driver 클래스)=&amp;gt; JDBC Driver 정보를 제공하는 기능=&amp;gt; DBMS와의 연결을 관리하는 객체를 리턴하는 기능
+java.sql.Connection (=&amp;gt; 구현 com.mysql.jdbc.Conne">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스터디그룹모임 - JavaScript의 this">
-<meta property="og:url" content="https://sharryhong.github.io/2017/02/12/javascript-study03/index.html">
+<meta property="og:title" content="JDBC 프로그래밍 & java.sql 패키지">
+<meta property="og:url" content="https://sharryhong.github.io/2017/06/04/java-jdbc02/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="이번주에 우리 스터디모임에서 나눈 주제는 크로스브라우징, JS ES6 - Arrow Function, 원시데이터와 참조데이터였습니다.Arrow Function에 대해서는 제가 발표자였는데, JavaScript의 this에 대해 좀 더 자세하게 다뤄야할 필요성이 느껴지더라고요. 잘 알고있다고 생각했는데 클래스, 인스턴스, 메소드 등의 this에 대해서 정">
-<meta property="og:image" content="https://sharryhong.github.io/image/study_group.jpg">
-<meta property="og:updated_time" content="2017-06-04T12:52:04.450Z">
+<meta property="og:description" content="java.sql 패키지의 주요 인터페이스 (mysql의 경우)java.sql.Driver (=&amp;gt; 구현 com.mysql.jdbc.Driver 클래스)=&amp;gt; JDBC Driver 정보를 제공하는 기능=&amp;gt; DBMS와의 연결을 관리하는 객체를 리턴하는 기능
+java.sql.Connection (=&amp;gt; 구현 com.mysql.jdbc.Conne">
+<meta property="og:image" content="https://sharryhong.github.io/image/java-jdbc.png">
+<meta property="og:updated_time" content="2017-06-04T14:21:29.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="스터디그룹모임 - JavaScript의 this">
-<meta name="twitter:description" content="이번주에 우리 스터디모임에서 나눈 주제는 크로스브라우징, JS ES6 - Arrow Function, 원시데이터와 참조데이터였습니다.Arrow Function에 대해서는 제가 발표자였는데, JavaScript의 this에 대해 좀 더 자세하게 다뤄야할 필요성이 느껴지더라고요. 잘 알고있다고 생각했는데 클래스, 인스턴스, 메소드 등의 this에 대해서 정">
-<meta name="twitter:image" content="https://sharryhong.github.io/image/study_group.jpg">
+<meta name="twitter:title" content="JDBC 프로그래밍 & java.sql 패키지">
+<meta name="twitter:description" content="java.sql 패키지의 주요 인터페이스 (mysql의 경우)java.sql.Driver (=&amp;gt; 구현 com.mysql.jdbc.Driver 클래스)=&amp;gt; JDBC Driver 정보를 제공하는 기능=&amp;gt; DBMS와의 연결을 관리하는 객체를 리턴하는 기능
+java.sql.Connection (=&amp;gt; 구현 com.mysql.jdbc.Conne">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/java-jdbc.png">
     
 
     
@@ -130,18 +133,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Front-End/">Front-End</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Front-End/JavaScript/">JavaScript</a>
+    <a class="page-title-link" href="/categories/Back-End/">Back-End</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Back-End/Java/">Java</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-javascript-study03" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-java-jdbc02" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        스터디그룹모임 - JavaScript의 this
+        JDBC 프로그래밍 &amp; java.sql 패키지
         </h1>
     
 
@@ -149,52 +152,34 @@
         
         
             <div class="article-subtitle">
-                <a href="/2017/02/12/javascript-study03/" class="article-date">
-    <time datetime="2017-02-12T09:07:05.000Z" itemprop="datePublished">2017-02-12</time>
+                <a href="/2017/06/04/java-jdbc02/" class="article-date">
+    <time datetime="2017-06-04T13:23:33.000Z" itemprop="datePublished">2017-06-04</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/this/">this</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/image/study_group.jpg" alt="스터디그룹 홧팅!! ^^"></p>
-<blockquote>
-<p>이번주에 우리 스터디모임에서 나눈 주제는 크로스브라우징, JS ES6 - Arrow Function, 원시데이터와 참조데이터였습니다.<br>Arrow Function에 대해서는 제가 발표자였는데, <strong>JavaScript의 this</strong>에 대해 좀 더 자세하게 다뤄야할 필요성이 느껴지더라고요. 잘 알고있다고 생각했는데 클래스, 인스턴스, 메소드 등의 this에 대해서 정리가 필요할 것 같았습니다.</p>
+            <p><img src="/image/java-jdbc.png" alt="JDBC"></p>
+<h2 id="java-sql-패키지의-주요-인터페이스-mysql의-경우"><a href="#java-sql-패키지의-주요-인터페이스-mysql의-경우" class="headerlink" title="java.sql 패키지의 주요 인터페이스 (mysql의 경우)"></a>java.sql 패키지의 주요 인터페이스 (mysql의 경우)</h2><p><code>java.sql.Driver</code> (=&gt; 구현 com.mysql.jdbc.Driver 클래스)<br>=&gt; JDBC Driver 정보를 제공하는 기능<br>=&gt; DBMS와의 연결을 관리하는 객체를 리턴하는 기능</p>
+<p><code>java.sql.Connection</code> (=&gt; 구현 com.mysql.jdbc.ConnectionImpl 클래스)<br>=&gt; DBMS와 연결을 수행하는 기능<br>=&gt; DBMS에 SQL을 전달할 객체를 리턴하는 기능</p>
+<p><code>java.sql.Statement</code> (=&gt; 구현 com.mysql.jdbc.StatementImpl 클래스)<br>=&gt; SQL을 MySQL 형식에 맞춰서 변환한 다음 서버에 보내는 기능<br>=&gt; 서버가 보낸 결과를 다룰 객체를 리턴하는 기능<br>=&gt; executeQuery() : SELECT 문 실행<br>=&gt; executeUpdate() : INSERT, UPDATE, DELETE 등 DML, DDL 명령문 실행<br>=&gt; executeBatch() : 여러 개의 SQL문을 실행할 때 사용<br>                    SELECT, INSERT, UPDATE, DELETE 등 모든 SQL 명령문 실행가능</p>
+<p><code>java.sql.ResultSet</code> (=&gt; 구현 com.mysql.jdbc.ResultSetImpl 클래스)<br>=&gt; DBMS 서버에서 SELECT를 실행한 후 생성된 결과를 가져오는 기능<br>=&gt; next()<br>      서버에서 한 개의 레코드를 가져옴<br>      정상적을 가져왔으면 true를 리턴,<br>      가져올 레코드가 없으면 false를 리턴<br>=&gt; getXxx(컬럼 번호 또는 컬럼명)<br>      서버에서 가져온 레코드의 컬럼 값을 꺼내는 메서드<br>      컬럼의 타입에 따라 호출하는 메서드가 다름<br>      숫자 -&gt; getInt()<br>      문자열 -&gt; getString()<br>      날짜 -&gt; getDate() 등</p>
+<h2 id="JDBC-프로그래밍"><a href="#JDBC-프로그래밍" class="headerlink" title="JDBC 프로그래밍"></a>JDBC 프로그래밍</h2><blockquote>
+<p>예외처리, 특정 DBMS에 종속되는 것을 막는 등의 코드 리펙토링이 필요하지만, 기본 개념을 위해 작성하였습니다.</p>
 </blockquote>
-<h2 id="this란"><a href="#this란" class="headerlink" title="this란?"></a>this란?</h2><p>일반적으로 메소드를 호출한 객체가 저장되어 있는 속성입니다.<br>하지만 JavaScript의 this 속성은 메소드를 호출할 때 뿐 아니라, 일반 함수를 호출할 때, 이벤트 리스너가 호출될 때, 중첩 함수에서 등에서의 this가 달라지게 됩니다.<br>간단하게 표로 나타내면..</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">this가 만들어지는 경우</th>
-<th style="text-align:left">this 값</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1_일반 함수</td>
-<td style="text-align:left">window</td>
-</tr>
-<tr>
-<td style="text-align:left">2_중첩 함수</td>
-<td style="text-align:left">window</td>
-</tr>
-<tr>
-<td style="text-align:left">3_이벤트</td>
-<td style="text-align:left">이벤트를 발생시킨 객체</td>
-</tr>
-<tr>
-<td style="text-align:left">4_메소드</td>
-<td style="text-align:left">메소드를 호출한 객체</td>
-</tr>
-<tr>
-<td style="text-align:left">5_메소드 내부의 중첩함수</td>
-<td style="text-align:left">window</td>
-</tr>
-</tbody>
-</table>
-<h3 id="1-일반-함수에서의-this"><a href="#1-일반-함수에서의-this" class="headerlink" title="1_일반 함수에서의 this"></a>1_일반 함수에서의 this</h3><h3 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h3><p>웹 프론트엔드 개발자를 위한, 자바스크립트+jQuery 완전정복 스터디 - 김춘경(딴동네)</p>
+<h4 id="1-MySQL-JDBC-드라이버의-정보를-다루는-객체를-생성합니다"><a href="#1-MySQL-JDBC-드라이버의-정보를-다루는-객체를-생성합니다" class="headerlink" title="1) MySQL JDBC 드라이버의 정보를 다루는 객체를 생성합니다."></a>1) MySQL JDBC 드라이버의 정보를 다루는 객체를 생성합니다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">com.mysql.jdbc.Driver mysqlDriver = new com.mysql.jdbc.Driver();</div></pre></td></tr></table></figure>
+<p>이 객체가 있어야만 MySQL DBMS에 연결할 수 있습니다.<br><code>com.mysql.jdbc.Driver</code>는 <code>java.sql.Driver</code> 인터페이스에 따라 만들어져 있습니다.</p>
+<h4 id="2-MySQL-JDBC-드라이버를-“드라이버-관리자”에-등록합니다"><a href="#2-MySQL-JDBC-드라이버를-“드라이버-관리자”에-등록합니다" class="headerlink" title="2) MySQL JDBC 드라이버를 “드라이버 관리자”에 등록합니다."></a>2) MySQL JDBC 드라이버를 “드라이버 관리자”에 등록합니다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DriverManager.registerDriver(mysqlDriver);</div></pre></td></tr></table></figure>
+<h4 id="3-드라이버-관리자를-통해-DBMS와-연결합니다"><a href="#3-드라이버-관리자를-통해-DBMS와-연결합니다" class="headerlink" title="3) 드라이버 관리자를 통해 DBMS와 연결합니다."></a>3) 드라이버 관리자를 통해 DBMS와 연결합니다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">java.sql.Connection con = DriverManager.getConnection(</div><div class="line">    &quot;jdbc:mysql://localhost:3306/dbname&quot;, /* 연결할 DBMS와 데이터베이스 정보 */</div><div class="line">    &quot;userid&quot;,</div><div class="line">    &quot;password&quot;);</div></pre></td></tr></table></figure>
+<h4 id="4-SQL을-실행할-Statement-객체-얻기"><a href="#4-SQL을-실행할-Statement-객체-얻기" class="headerlink" title="4) SQL을 실행할 Statement 객체 얻기"></a>4) SQL을 실행할 Statement 객체 얻기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.sql.Statement stmt = con.createStatement();</div></pre></td></tr></table></figure>
+<p>java.sql.Statement 규격에 따라 만든 객체를 리턴합니다.<br>Statement 객체가 SQL 문을 DBMS에 보내는 일을 합니다.</p>
+<h4 id="5-SELECT-SQL문을-DBMS에-보냅니다"><a href="#5-SELECT-SQL문을-DBMS에-보냅니다" class="headerlink" title="5) SELECT SQL문을 DBMS에 보냅니다."></a>5) SELECT SQL문을 DBMS에 보냅니다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.sql.ResultSet rs = stmt.executeQuery(&quot;select mno, name, tel, email from memb&quot;);</div></pre></td></tr></table></figure>
+<p>executeQuery() : 서버가 SELECT를 실행한 후 준비한 결과 값을 가져오는 객체를 리턴하는데, java.sql.ResultSet 규격에 따라 만들어져 있습니다.</p>
+<h4 id="ResultSet-객체를-통해-서버에-결과를-한-개씩-가져옵니다-next-메서드"><a href="#ResultSet-객체를-통해-서버에-결과를-한-개씩-가져옵니다-next-메서드" class="headerlink" title="ResultSet 객체를 통해 서버에 결과를 한 개씩 가져옵니다. (next() 메서드)"></a>ResultSet 객체를 통해 서버에 결과를 한 개씩 가져옵니다. (next() 메서드)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">while (rs.next()) &#123;</div><div class="line">  System.out.printf(&quot;%d, %s, %s, %s\n&quot;,</div><div class="line">      rs.getInt(&quot;mno&quot;),</div><div class="line">      rs.getString(&quot;name&quot;),</div><div class="line">      rs.getString(&quot;tel&quot;),</div><div class="line">      rs.getString(&quot;email&quot;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="6-지금까지-사용한-JDBC-관련-객체의-자원을-생성된-역순으로-해제시킵니다"><a href="#6-지금까지-사용한-JDBC-관련-객체의-자원을-생성된-역순으로-해제시킵니다" class="headerlink" title="6) 지금까지 사용한 JDBC 관련 객체의 자원을 생성된 역순으로 해제시킵니다."></a>6) 지금까지 사용한 JDBC 관련 객체의 자원을 생성된 역순으로 해제시킵니다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rs.close();      // ResultSet 자원 해제</div><div class="line">stmt.close();    // Statement 자원 해제</div><div class="line">con.close();     // DBMS와 연결을 끊고 싶다면 Connection의 close()를 호출합니다.</div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -202,7 +187,7 @@
 
 
 
-    <a data-url="https://sharryhong.github.io/2017/02/12/javascript-study03/" data-id="cj3isricl0034vgnrn2b27b3c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://sharryhong.github.io/2017/06/04/java-jdbc02/" data-id="cj3isri6l000qvgnr5idv5bqe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -298,20 +283,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/02/13/javascript-array02/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            JavaScript Array - forEach, map, filter 내장 메소드
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/02/06/javascript-es6-class/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/06/04/java-jdbc/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">JavaScript ES6 문법 - class</p>
+        <p class="article-nav-title">JDBC(Java Database Connectivity)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -486,7 +461,7 @@
     var disqus_shortname = 'sharryhong';
     
     
-    var disqus_url = 'https://sharryhong.github.io/2017/02/12/javascript-study03/';
+    var disqus_url = 'https://sharryhong.github.io/2017/06/04/java-jdbc02/';
     
     (function() {
     var dsq = document.createElement('script');

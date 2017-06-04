@@ -11,9 +11,9 @@
     <meta name="description" content="Free Project를 진행하면서 자주 사용하는 프로퍼티, 메소드 등을 계속 추가할 예정입니다. :)
 
 목차charAt 메소드replace 메소드repeat 메소드slice 메소드substring 메소드
-charAt 메소드문자열에서 특정 위치의 문자를 구할 수 있습니다. 
+charAt 메소드문자열에서 특정 위치의 문자를 구할 수 있습니다.
 1str.charAt(index)
-index : 문자열의 위치 인덱스 값으로 0">
+index : 문자열의 위치 인덱스 값으로 0부">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript String 프로퍼티, 메소드">
 <meta property="og:url" content="https://sharryhong.github.io/2017/01/09/javascript-string/index.html">
@@ -21,18 +21,20 @@ index : 문자열의 위치 인덱스 값으로 0">
 <meta property="og:description" content="Free Project를 진행하면서 자주 사용하는 프로퍼티, 메소드 등을 계속 추가할 예정입니다. :)
 
 목차charAt 메소드replace 메소드repeat 메소드slice 메소드substring 메소드
-charAt 메소드문자열에서 특정 위치의 문자를 구할 수 있습니다. 
+charAt 메소드문자열에서 특정 위치의 문자를 구할 수 있습니다.
 1str.charAt(index)
-index : 문자열의 위치 인덱스 값으로 0">
-<meta property="og:updated_time" content="2017-01-14T08:21:41.545Z">
+index : 문자열의 위치 인덱스 값으로 0부">
+<meta property="og:image" content="https://sharryhong.github.io/image/js.png">
+<meta property="og:updated_time" content="2017-06-04T12:49:15.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript String 프로퍼티, 메소드">
 <meta name="twitter:description" content="Free Project를 진행하면서 자주 사용하는 프로퍼티, 메소드 등을 계속 추가할 예정입니다. :)
 
 목차charAt 메소드replace 메소드repeat 메소드slice 메소드substring 메소드
-charAt 메소드문자열에서 특정 위치의 문자를 구할 수 있습니다. 
+charAt 메소드문자열에서 특정 위치의 문자를 구할 수 있습니다.
 1str.charAt(index)
-index : 문자열의 위치 인덱스 값으로 0">
+index : 문자열의 위치 인덱스 값으로 0부">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/js.png">
     
 
     
@@ -172,16 +174,16 @@ index : 문자열의 위치 인덱스 값으로 0">
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/js.png" alt="JavaScript"></p>
 <blockquote>
 <p>Free Project를 진행하면서 자주 사용하는 프로퍼티, 메소드 등을 계속 추가할 예정입니다. :)</p>
 </blockquote>
 <h4 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h4><p><a href="#charAt-메소드">charAt 메소드</a><br><a href="#replace-메소드">replace 메소드</a><br><a href="#repeat-메소드">repeat 메소드</a><br><a href="#slice-메소드">slice 메소드</a><br><a href="#substring-메소드">substring 메소드</a></p>
-<h2 id="charAt-메소드"><a href="#charAt-메소드" class="headerlink" title="charAt 메소드"></a><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charAt" target="_blank" rel="external">charAt 메소드</a></h2><p>문자열에서 특정 위치의 문자를 구할 수 있습니다. </p>
+<h2 id="charAt-메소드"><a href="#charAt-메소드" class="headerlink" title="charAt 메소드"></a><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charAt" target="_blank" rel="external">charAt 메소드</a></h2><p>문자열에서 특정 위치의 문자를 구할 수 있습니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.charAt(index)</div></pre></td></tr></table></figure>
-<p>index : 문자열의 위치 인덱스 값으로 0부터 시작<br>리턴값 : index 위치의 문자 </p>
+<p>index : 문자열의 위치 인덱스 값으로 0부터 시작<br>리턴값 : index 위치의 문자</p>
 <p>알고리즘 코드에 올린 내용입니다.<br>마지막 번호 4개를 제외하고 *로 보이게 하기 (핸드폰번호 가리기)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function hide_numbers(s)&#123;</div><div class="line">	var result = &quot;&quot;;</div><div class="line">	var sLength = s.length;</div><div class="line">	for(var i = 0; i &lt; sLength; i++)&#123;</div><div class="line">		result += i &lt; sLength - 4 ? &quot;*&quot; : s.charAt(i);</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(&quot;결과 : &quot; + hide_numbers(&apos;01033334444&apos;));</div></pre></td></tr></table></figure></p>
-<p>문자열의 길이 s.length - 4 보다 작다면, 즉, 마지막 4개 이전의 index 값에는 *를 대입하고, 나머지는 원래의 s.charAt(i)값을 대입합니다. </p>
+<p>문자열의 길이 s.length - 4 보다 작다면, 즉, 마지막 4개 이전의 index 값에는 *를 대입하고, 나머지는 원래의 s.charAt(i)값을 대입합니다.</p>
 <p><sup><a href="#목차">(목차로 돌아가기)</a></sup></p>
 <h2 id="replace-메소드"><a href="#replace-메소드" class="headerlink" title="replace 메소드"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="external">replace 메소드</a></h2><p>어떤 패턴에 일치하는 일부 또는 모든 부분이 교체된 새로운 문자열을 반환합니다.</p>
 <p>String.prototype.replace()</p>
@@ -190,14 +192,15 @@ index : 문자열의 위치 인덱스 값으로 0">
 <h4 id="예-속성-class-값-중-‘no-js’-값을-‘js’로-변경하기"><a href="#예-속성-class-값-중-‘no-js’-값을-‘js’로-변경하기" class="headerlink" title="예) 속성 class 값 중 ‘no-js’ 값을 ‘js’로 변경하기"></a>예) 속성 class 값 중 ‘no-js’ 값을 ‘js’로 변경하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var html_class_attr = element.getAttribute(&apos;class&apos;);</div><div class="line">element.setAttribute(&apos;class&apos;, html_class_attr.replace(/no-js/,&apos;js&apos;));</div></pre></td></tr></table></figure>
 <p><sup><a href="#목차">(목차로 돌아가기)</a></sup></p>
 <h2 id="repeat-메소드"><a href="#repeat-메소드" class="headerlink" title="repeat 메소드"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat" target="_blank" rel="external">repeat 메소드</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.repeat(count)</div></pre></td></tr></table></figure>
-<p><strong>count</strong> : 0이상의 정수. 기존의 문자열을 반복할 횟수<br>리턴값 : 횟수만큼 복사를 포함하는 새 문자열 </p>
+<p><strong>count</strong> : 0이상의 정수. 기존의 문자열을 반복할 횟수<br>리턴값 : 횟수만큼 복사를 포함하는 새 문자열</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;abc&quot;.repeat(2); // 결과 : // &quot;abcabc&quot;</div></pre></td></tr></table></figure>
-<h6 id="브라우저-호환-IE-오페라-지원안함"><a href="#브라우저-호환-IE-오페라-지원안함" class="headerlink" title="브라우저 호환 : IE, 오페라 지원안함"></a>브라우저 호환 : IE, 오페라 지원안함</h6><p>ES6에서 추가된 메소드입니다. </p>
+<h6 id="브라우저-호환-IE-오페라-지원안함"><a href="#브라우저-호환-IE-오페라-지원안함" class="headerlink" title="브라우저 호환 : IE, 오페라 지원안함"></a>브라우저 호환 : IE, 오페라 지원안함</h6><p>ES6에서 추가된 메소드입니다.</p>
 <p><sup><a href="#목차">(목차로 돌아가기)</a></sup></p>
 <h2 id="slice-메소드"><a href="#slice-메소드" class="headerlink" title="slice 메소드"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">slice 메소드</a></h2><p>지정한 문자열 시작위치 ~ 끝위치까지의 문자열을 반환합니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.slice(beginSlice[, endSlice])</div></pre></td></tr></table></figure>
 <p><sup><a href="#목차">(목차로 돌아가기)</a></sup></p>
 <h2 id="substring-메소드"><a href="#substring-메소드" class="headerlink" title="substring 메소드"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring" target="_blank" rel="external">substring 메소드</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.substring(indexStart[, indexEnd])</div></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
@@ -425,7 +428,7 @@ index : 문자열의 위치 인덱스 값으로 0">
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

@@ -8,25 +8,27 @@
     
         <meta name="keywords" content="JavaScript,Module Patton,IIFE,Closure" />
     
-    <meta name="description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. 
+    <meta name="description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다.
 
 Module : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.
-자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modu">
+자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modul">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript - Module Patton">
 <meta property="og:url" content="https://sharryhong.github.io/2017/01/16/javascript-module-patton/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. 
+<meta property="og:description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다.
 
 Module : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.
-자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modu">
-<meta property="og:updated_time" content="2017-01-22T14:29:04.202Z">
+자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modul">
+<meta property="og:image" content="https://sharryhong.github.io/image/js.png">
+<meta property="og:updated_time" content="2017-06-04T12:49:06.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript - Module Patton">
-<meta name="twitter:description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. 
+<meta name="twitter:description" content="이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다.
 
 Module : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.
-자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modu">
+자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.The Modul">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/js.png">
     
 
     
@@ -166,16 +168,16 @@ Module : 모듈은 application’s architecture(구조)의 필수 요소이며 �
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/js.png" alt="JavaScript"></p>
 <blockquote>
-<p>이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다. </p>
+<p>이번에 진행할 Free Project에서 Module Patton으로 Module을 구현하려고 합니다.</p>
 </blockquote>
 <p><strong>Module</strong> : 모듈은 application’s architecture(구조)의 필수 요소이며 일반적으로 프로젝트의 코드 단위를 명확하게 분리하고 구성하는 데 도움이됩니다.</p>
 <p>자바스크립트에서는 모듈 구현을 위한 몇가지 방법이 있습니다.<br>The Module pattern (모듈패턴)<br>Object literal notation (객체 리터럴 표기법)<br>AMD modules<br>CommonJS modules<br>ECMAScript Harmony modules</p>
 <h2 id="Module-Patton-모듈-패텬"><a href="#Module-Patton-모듈-패텬" class="headerlink" title="Module Patton(모듈 패텬)"></a>Module Patton(모듈 패텬)</h2><p>모듈 패턴은 전통적인 소프트웨어 엔지니어링에서 클래스를 위한 private 및 public로 나뉜 캡슐화를 제공하는 방법입니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// data를 다루는 모듈</div><div class="line">var budgetController = (function()&#123;</div><div class="line"></div><div class="line">	// private 영역 </div><div class="line">	// 클로저 내부에 있고 publicTest 메소드를 통해서만 엑세스가 가능하기 때문입니다.</div><div class="line">	var x = 20; // private 프로퍼티 </div><div class="line">	var add = function(a)&#123; // private 메소드 </div><div class="line">		return x + a;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// public 영역 : 필요한 것만 공개합니다.</div><div class="line">	return &#123;</div><div class="line">		// 항상 x와 add에 엑세스하므로 클로저(closure)가 생성됩니다.</div><div class="line">		publicTest: function(b)&#123;</div><div class="line">			return add(b);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// UI를 다루는 모듈 </div><div class="line">var UIController = (function()&#123;</div><div class="line">	// code</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// data와 UI를 같이 다루는 모듈</div><div class="line">var controller = (function(budgetCtrl, UICtrl)&#123;</div><div class="line">	var z = budgetCtrl.publicTest(5);</div><div class="line"></div><div class="line">	return&#123;</div><div class="line">		anotherPublic: function()&#123;</div><div class="line">			console.log(z);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)(budgetController, UIController);</div></pre></td></tr></table></figure>
-<p>위 코드에서 public으로 공개된 코드를 사용하여 <code>controller.anotherPublic();</code> 이런식으로 budgetController의 publicTest 메소드에 접근합니다. </p>
-<p>controller 내에서 <code>budgetCtrl.publicTest(5);</code>로 하지 않고, <code>budgetController.publicTest(5);</code>로도 접근이 가능하지만, 이 경우 나중에 budgetController의 이름을 바꾸게 된다면 모든 코드를 수정해야합니다.<br>따라서, 위처럼 매개변수로 받은 이름을 쓴다면 쉽게 수정이 가능해집니다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// data를 다루는 모듈</div><div class="line">var budgetController = (function()&#123;</div><div class="line"></div><div class="line">	// private 영역</div><div class="line">	// 클로저 내부에 있고 publicTest 메소드를 통해서만 엑세스가 가능하기 때문입니다.</div><div class="line">	var x = 20; // private 프로퍼티</div><div class="line">	var add = function(a)&#123; // private 메소드</div><div class="line">		return x + a;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// public 영역 : 필요한 것만 공개합니다.</div><div class="line">	return &#123;</div><div class="line">		// 항상 x와 add에 엑세스하므로 클로저(closure)가 생성됩니다.</div><div class="line">		publicTest: function(b)&#123;</div><div class="line">			return add(b);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// UI를 다루는 모듈</div><div class="line">var UIController = (function()&#123;</div><div class="line">	// code</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// data와 UI를 같이 다루는 모듈</div><div class="line">var controller = (function(budgetCtrl, UICtrl)&#123;</div><div class="line">	var z = budgetCtrl.publicTest(5);</div><div class="line"></div><div class="line">	return&#123;</div><div class="line">		anotherPublic: function()&#123;</div><div class="line">			console.log(z);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)(budgetController, UIController);</div></pre></td></tr></table></figure>
+<p>위 코드에서 public으로 공개된 코드를 사용하여 <code>controller.anotherPublic();</code> 이런식으로 budgetController의 publicTest 메소드에 접근합니다.</p>
+<p>controller 내에서 <code>budgetCtrl.publicTest(5);</code>로 하지 않고, <code>budgetController.publicTest(5);</code>로도 접근이 가능하지만, 이 경우 나중에 budgetController의 이름을 바꾸게 된다면 모든 코드를 수정해야합니다.<br>따라서, 위처럼 매개변수로 받은 이름을 쓴다면 쉽게 수정이 가능해집니다.</p>
 <h3 id="IIFE-Immediately-Invoked-Function-Expressions-즉시실행함수"><a href="#IIFE-Immediately-Invoked-Function-Expressions-즉시실행함수" class="headerlink" title="IIFE (Immediately Invoked Function Expressions 즉시실행함수)"></a>IIFE (Immediately Invoked Function Expressions 즉시실행함수)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">	// code</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
 <p>위처럼 뒤에 <code>()</code>를 붙이면 함수가 즉시 실행됩니다.<br>함수내부 프로퍼티, 메소드는 외부에서 접근을 못한다는 개념을 사용하여 전역을 오염시키지 않도록 하는 방법입니다.</p>
 <h3 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h3><p><a href="https://www.udemy.com/the-complete-javascript-course/learn/v4/overview" target="_blank" rel="external">Udemy - The Complete JavaScript Course</a><br><a href="http://blog.javarouka.me/2012/02/javascripts-pattern-2-module-pattern.html" target="_blank" rel="external">Nonblock 블로그</a><br><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript" target="_blank" rel="external">Learning JavaScript Design Patterns</a></p>
@@ -407,7 +409,7 @@ Module : 모듈은 application’s architecture(구조)의 필수 요소이며 �
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

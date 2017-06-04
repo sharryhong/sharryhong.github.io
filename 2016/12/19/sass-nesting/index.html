@@ -18,12 +18,14 @@ Nesting(중첩)중첩은 반복을 제거하고 스타일링에 분명한 DOM관
 <meta property="og:description" content="해당 코드가 있는 Github 바로가기01해당 코드가 있는 Github 바로가기02
 Nesting(중첩)중첩은 반복을 제거하고 스타일링에 분명한 DOM관계를 보여줌으로서 코드를 효율적으로 만듭니다.
 확장자가 SCSS, SASS 일 때 문법이 다른데,SCSS파일의 경우는 기존의 CSS의 문법과 동일합니다.123456.parent &amp;#123;  color:">
-<meta property="og:updated_time" content="2016-12-21T08:09:27.399Z">
+<meta property="og:image" content="https://sharryhong.github.io/image/sass.png">
+<meta property="og:updated_time" content="2017-06-04T12:58:56.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SASS Nesting(중첩)">
 <meta name="twitter:description" content="해당 코드가 있는 Github 바로가기01해당 코드가 있는 Github 바로가기02
 Nesting(중첩)중첩은 반복을 제거하고 스타일링에 분명한 DOM관계를 보여줌으로서 코드를 효율적으로 만듭니다.
 확장자가 SCSS, SASS 일 때 문법이 다른데,SCSS파일의 경우는 기존의 CSS의 문법과 동일합니다.123456.parent &amp;#123;  color:">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/sass.png">
     
 
     
@@ -163,11 +165,11 @@ Nesting(중첩)중첩은 반복을 제거하고 스타일링에 분명한 DOM관
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/sass.png" alt="sass"></p>
 <p><a href="https://github.com/sharryhong/TIL/tree/master/sass/01_First_Sass" target="_blank" rel="external">해당 코드가 있는 Github 바로가기01</a><br><a href="https://github.com/sharryhong/FDS/tree/master/day22-sass" target="_blank" rel="external">해당 코드가 있는 Github 바로가기02</a></p>
 <h2 id="Nesting-중첩"><a href="#Nesting-중첩" class="headerlink" title="Nesting(중첩)"></a>Nesting(중첩)</h2><p>중첩은 <strong>반복을 제거</strong>하고 스타일링에 <strong>분명한 DOM관계</strong>를 보여줌으로서 코드를 <strong>효율적</strong>으로 만듭니다.</p>
 <p>확장자가 SCSS, SASS 일 때 문법이 다른데,<br>SCSS파일의 경우는 기존의 CSS의 문법과 동일합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">  color: blue;</div><div class="line">  .child &#123;</div><div class="line">    font-size: 12px;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>SASS파일의 경우 <code>{}</code>를 쓰지 않고 들여쓰기로 구분합니다. <code>;</code>도 쓰지 않습니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.parent </div><div class="line">  color: blue</div><div class="line">  .child </div><div class="line">    font-size: 12px</div></pre></td></tr></table></figure></p>
+<p>SASS파일의 경우 <code>{}</code>를 쓰지 않고 들여쓰기로 구분합니다. <code>;</code>도 쓰지 않습니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.parent</div><div class="line">  color: blue</div><div class="line">  .child</div><div class="line">    font-size: 12px</div></pre></td></tr></table></figure></p>
 <p>위의 SCSS와 SASS의 CSS 컴파일 결과는 같습니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.parent .child &#123;</div><div class="line">    font-size: 12px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="속성에-관련한-Nesting"><a href="#속성에-관련한-Nesting" class="headerlink" title="속성에 관련한 Nesting :"></a>속성에 관련한 Nesting <code>:</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">  font : &#123;</div><div class="line">    family: Roboto, sans-serif;</div><div class="line">    size: 12px;</div><div class="line">    decoration: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>컴파일 결과<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.parent &#123;</div><div class="line">  font-family: Roboto, sans-serif;</div><div class="line">  font-size: 12px;</div><div class="line">  font-decoration: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -403,7 +405,7 @@ Nesting(중첩)중첩은 반복을 제거하고 스타일링에 분명한 DOM관
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

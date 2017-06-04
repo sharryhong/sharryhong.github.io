@@ -9,18 +9,26 @@
         <meta name="keywords" content="JavaScript,Algorism" />
     
     <meta name="description" content="알고리즘 13. 피보나치 수열 (JavaScript)
-피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.예를 들어 n = 3이라면 2를 반환해주면 됩니다.">
+피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.예를 들어 n = 3이라면 2를 반환해주면 됩니다.
+
+피">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algorism - 피보나치 수열 (JavaScript)">
 <meta property="og:url" content="https://sharryhong.github.io/2017/01/24/algorism13-fibonacci/index.html">
 <meta property="og:site_name" content="H-web Blog">
 <meta property="og:description" content="알고리즘 13. 피보나치 수열 (JavaScript)
-피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.예를 들어 n = 3이라면 2를 반환해주면 됩니다.">
-<meta property="og:updated_time" content="2017-01-25T06:32:13.781Z">
+피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.예를 들어 n = 3이라면 2를 반환해주면 됩니다.
+
+피">
+<meta property="og:image" content="https://sharryhong.github.io/image/al.jpg">
+<meta property="og:updated_time" content="2017-06-04T12:46:02.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorism - 피보나치 수열 (JavaScript)">
 <meta name="twitter:description" content="알고리즘 13. 피보나치 수열 (JavaScript)
-피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.예를 들어 n = 3이라면 2를 반환해주면 됩니다.">
+피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.예를 들어 n = 3이라면 2를 반환해주면 됩니다.
+
+피">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/al.jpg">
     
 
     
@@ -160,15 +168,15 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/al.jpg" alt="tryhelloworld"></p>
 <h2 id="알고리즘-13-피보나치-수열-JavaScript"><a href="#알고리즘-13-피보나치-수열-JavaScript" class="headerlink" title="알고리즘 13. 피보나치 수열 (JavaScript)"></a>알고리즘 13. 피보나치 수열 (JavaScript)</h2><blockquote>
-<p>피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.<br>2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.<br>예를 들어 n = 3이라면 2를 반환해주면 됩니다. </p>
+<p>피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.<br>2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.<br>예를 들어 n = 3이라면 2를 반환해주면 됩니다.</p>
 </blockquote>
 <p><a href="https://ko.wikipedia.org/wiki/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98_%EC%88%98" target="_blank" rel="external">피보나치 수 - 위키피디아</a></p>
-<h4 id="나의-코딩"><a href="#나의-코딩" class="headerlink" title="나의 코딩"></a>나의 코딩</h4><p>1) 피보나치가 잘 고안해 낸 식을 그대로 써서, 매개변수가 0, 1일 땐 매개변수 자체를 반환하고, 1보다 클 때는 매개변수가 0, 1이 될때까지 함수를 실행하게끔 <code>F(n) = F(n-1) + F(n-2)</code> 대로 해보자. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function fibonacci(num) &#123;</div><div class="line">	var answer = 0;</div><div class="line"></div><div class="line">	if( num &lt;= 1 ) &#123;</div><div class="line">		return num;</div><div class="line">	&#125; </div><div class="line">	else if( num &gt; 1 ) &#123;</div><div class="line">		answer = fibonacci(num-1) + fibonacci(num-2);</div><div class="line">	&#125;</div><div class="line">	return answer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">console.log(fibonacci(3));</div></pre></td></tr></table></figure>
+<h4 id="나의-코딩"><a href="#나의-코딩" class="headerlink" title="나의 코딩"></a>나의 코딩</h4><p>1) 피보나치가 잘 고안해 낸 식을 그대로 써서, 매개변수가 0, 1일 땐 매개변수 자체를 반환하고, 1보다 클 때는 매개변수가 0, 1이 될때까지 함수를 실행하게끔 <code>F(n) = F(n-1) + F(n-2)</code> 대로 해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function fibonacci(num) &#123;</div><div class="line">	var answer = 0;</div><div class="line"></div><div class="line">	if( num &lt;= 1 ) &#123;</div><div class="line">		return num;</div><div class="line">	&#125;</div><div class="line">	else if( num &gt; 1 ) &#123;</div><div class="line">		answer = fibonacci(num-1) + fibonacci(num-2);</div><div class="line">	&#125;</div><div class="line">	return answer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">console.log(fibonacci(3));</div></pre></td></tr></table></figure>
 <blockquote>
-<p>생각과 그대로 잘 실행이 되었다. 피보나치 레오나르도 수학자님 짱 ㅋㅋㅋ </p>
+<p>생각과 그대로 잘 실행이 되었다. 피보나치 레오나르도 수학자님 짱 ㅋㅋㅋ</p>
 </blockquote>
 
         </div>
@@ -398,7 +406,7 @@
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

@@ -14,10 +14,12 @@
 <meta property="og:url" content="https://sharryhong.github.io/2017/02/03/javascript-es6-string/index.html">
 <meta property="og:site_name" content="H-web Blog">
 <meta property="og:description" content="Template StringsES5에서 문자열을 변수, 함수와 함께 쓰고자 할 때 +기호를 씁니다.12345678910let firstName = &amp;apos;John&amp;apos;;let lastName = &amp;apos;Smith&amp;apos;;const yearOfBirth = 1990;function calcAge(year) &amp;#123;	return 2017">
-<meta property="og:updated_time" content="2017-02-28T16:26:12.790Z">
+<meta property="og:image" content="https://sharryhong.github.io/image/es6.png">
+<meta property="og:updated_time" content="2017-06-04T12:50:47.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript ES6 문법 - Strings 문자열표기법 등">
 <meta name="twitter:description" content="Template StringsES5에서 문자열을 변수, 함수와 함께 쓰고자 할 때 +기호를 씁니다.12345678910let firstName = &amp;apos;John&amp;apos;;let lastName = &amp;apos;Smith&amp;apos;;const yearOfBirth = 1990;function calcAge(year) &amp;#123;	return 2017">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/es6.png">
     
 
     
@@ -157,16 +159,16 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/es6.png" alt="JavaScript"></p>
 <h2 id="Template-Strings"><a href="#Template-Strings" class="headerlink" title="Template Strings"></a>Template Strings</h2><p>ES5에서 문자열을 변수, 함수와 함께 쓰고자 할 때 <code>+</code>기호를 씁니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let firstName = &apos;John&apos;;</div><div class="line">let lastName = &apos;Smith&apos;;</div><div class="line">const yearOfBirth = 1990;</div><div class="line"></div><div class="line">function calcAge(year) &#123;</div><div class="line">	return 2017 - year;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// ES5</div><div class="line">console.log(&apos;This is &apos; + firstName + &apos; &apos;+ lastName +&apos;. He was born in &apos; + yearOfBirth + &apos;. Today, he is &apos; + calcAge(yearOfBirth) + &apos; years old.&apos;);</div></pre></td></tr></table></figure></p>
-<p>이처럼 때로는 번거롭게 코딩해야하는데요, </p>
+<p>이처럼 때로는 번거롭게 코딩해야하는데요,</p>
 <p>ES6에서는 <code>${value(변수, 함수 등)}</code>를 제공함으로서 보다 편리하게 코딩할 수 있습니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// ES6</div><div class="line">console.log(`This is $&#123;firstName&#125; $&#123;lastName&#125;. He was born in $&#123;yearOfBirth&#125;. Today, he is $&#123;calcAge(yearOfBirth)&#125; years old.`);</div></pre></td></tr></table></figure></p>
 <h3 id="String-메소드들"><a href="#String-메소드들" class="headerlink" title="String 메소드들"></a>String 메소드들</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const fullName = `$&#123;firstName&#125; $&#123;lastName&#125;`;</div><div class="line"></div><div class="line">console.log(fullName.startsWith(&apos;J&apos;)); 	// true</div><div class="line">console.log(fullName.endsWith(&apos;th&apos;));	// true</div><div class="line">console.log(fullName.includes(&apos; &apos;));	// true</div><div class="line">console.log(fullName.repeat(3));	// John SmithJohn SmithJohn Smith</div><div class="line">console.log(`$&#123;fullName&#125;, `.repeat(3));	// John Smith, John Smith, John Smith,</div></pre></td></tr></table></figure>
 <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith" target="_blank" rel="external">String.prototype.startsWith()</a><br>특정 문자열로 시작하는지 확인하여 맞으면 true, 틀리면 false를 반환합니다.</p>
 <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith" target="_blank" rel="external">String.prototype.endsWith()</a><br>특정 문자열로 끝나는지 확인하여 맞으면 true, 틀리면 false를 반환합니다.</p>
-<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank" rel="external">String.prototype.includes()</a><br>특정 문자열을 포함하고 있으면 true, 없으면 false를 반환합니다. </p>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank" rel="external">String.prototype.includes()</a><br>특정 문자열을 포함하고 있으면 true, 없으면 false를 반환합니다.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat" target="_blank" rel="external">String.prototype.repeat()</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">string.repeat(count);</div></pre></td></tr></table></figure></p>
-<p>count 횟수만큼 반복하여 문자열을 반환합니다. </p>
+<p>count 횟수만큼 반복하여 문자열을 반환합니다.</p>
 <h3 id="ES6-포스팅"><a href="#ES6-포스팅" class="headerlink" title="ES6 포스팅"></a>ES6 포스팅</h3><p><a href="https://sharryhong.github.io/2016/12/25/javascript-es6/">변수선언 let, const</a><br><a href="https://sharryhong.github.io/2017/02/02/javascript-es6-blocks/">Blocks and IIFEs</a><br><a href="https://sharryhong.github.io/2017/02/03/javascript-es6-string/">Strings 문자열표기법 등</a><br><a href="https://sharryhong.github.io/2016/12/26/javascript-es6-arrow-functions/">Arrow functions</a><br><a href="https://sharryhong.github.io/2017/02/06/javascript-es6-class/">Class</a><br><a href="https://sharryhong.github.io/2017/02/26/javascript-ex6-restparameter/">rest parameter</a><br><a href="https://sharryhong.github.io/2017/02/27/javascript-ex6-spread-operator/">spread operator</a><br><a href="https://sharryhong.github.io/2017/03/01/javascript-ex6-default-parameter/">default parameter</a></p>
 
         </div>
@@ -396,7 +398,7 @@
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

@@ -11,8 +11,8 @@
     <meta name="description" content="알고리즘 02. 평균구하기 (JavaScript)
 def average(list):함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.
 
-처음 나의 코딩1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자. 
-2) 매개변수로 들어온 배열.length">
+처음 나의 코딩1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자.
+2) 매개변수로 들어온 배열.length의">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algorism - 평균구하기 (JavaScript)">
 <meta property="og:url" content="https://sharryhong.github.io/2017/01/13/algorism-02/index.html">
@@ -20,16 +20,18 @@ def average(list):함수를 완성해서 매개변수 list의 평균값을 retur
 <meta property="og:description" content="알고리즘 02. 평균구하기 (JavaScript)
 def average(list):함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.
 
-처음 나의 코딩1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자. 
-2) 매개변수로 들어온 배열.length">
-<meta property="og:updated_time" content="2017-01-25T06:32:18.475Z">
+처음 나의 코딩1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자.
+2) 매개변수로 들어온 배열.length의">
+<meta property="og:image" content="https://sharryhong.github.io/image/al.jpg">
+<meta property="og:updated_time" content="2017-06-04T12:45:54.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorism - 평균구하기 (JavaScript)">
 <meta name="twitter:description" content="알고리즘 02. 평균구하기 (JavaScript)
 def average(list):함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.
 
-처음 나의 코딩1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자. 
-2) 매개변수로 들어온 배열.length">
+처음 나의 코딩1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자.
+2) 매개변수로 들어온 배열.length의">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/al.jpg">
     
 
     
@@ -169,16 +171,16 @@ def average(list):함수를 완성해서 매개변수 list의 평균값을 retur
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/al.jpg" alt="tryhelloworld"></p>
 <h2 id="알고리즘-02-평균구하기-JavaScript"><a href="#알고리즘-02-평균구하기-JavaScript" class="headerlink" title="알고리즘 02. 평균구하기 (JavaScript)"></a>알고리즘 02. 평균구하기 (JavaScript)</h2><blockquote>
 <p>def average(list):<br>함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.<br>어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.</p>
 </blockquote>
-<h4 id="처음-나의-코딩"><a href="#처음-나의-코딩" class="headerlink" title="처음 나의 코딩"></a>처음 나의 코딩</h4><p>1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자. </p>
-<p>2) 매개변수로 들어온 배열.length의 경우 2번이상 쓰이므로 변수에 저장하자. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function average(array)&#123;</div><div class="line">  var result = 0;</div><div class="line">  var arrLength = array.length;</div><div class="line">  for(var i = 0; i &lt; arrLength; i++)&#123;</div><div class="line">    result += array[i];</div><div class="line">  &#125;</div><div class="line">  return result/arrLength;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">var testArray = [5,3,4] </div><div class="line">console.log(&quot;평균값 : &quot; + average(testArray));</div></pre></td></tr></table></figure>
-<h4 id="다른분의-코딩을-참고한-코드-리펙토링"><a href="#다른분의-코딩을-참고한-코드-리펙토링" class="headerlink" title="다른분의 코딩을 참고한 코드 리펙토링"></a>다른분의 코딩을 참고한 코드 리펙토링</h4><p>ES6문법으로 코드 리펙토링해보았습니다.<br>우선 let 선언으로 정의된 블록내에서만 존재하는 지역변수로 설정하고,<br>for of문을 사용하여 각 배열 값이 자동으로 더해지게 하였습니다.<br>주의사항 : for of문의 경우 브라우저 호환이 안되는 경우가 많습니다. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function average(array)&#123;</div><div class="line">  let result = 0;</div><div class="line">  for(let item of array)&#123;</div><div class="line">    result += item;</div><div class="line">  &#125;</div><div class="line">  return result/array.length;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">var testArray = [5,3,4] </div><div class="line">console.log(&quot;평균값 : &quot; + average(testArray));</div></pre></td></tr></table></figure>
-<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="external"><strong>for of문</strong></a><br>for…of 문(statement)은 반복가능한 객체 (Array, Map, Set, String, TypedArray, arguments 객체 등을 포함)에 대해서 반복하고 각 개별 속성값에 대해 실행되는 문이 있는 사용자 정의 반복 후크를 호출하는 루프를 생성합니다. </p>
+<h4 id="처음-나의-코딩"><a href="#처음-나의-코딩" class="headerlink" title="처음 나의 코딩"></a>처음 나의 코딩</h4><p>1) 목표 : 배열 값을 모두 더하여 length만큼 나눠 평균을 구하자.</p>
+<p>2) 매개변수로 들어온 배열.length의 경우 2번이상 쓰이므로 변수에 저장하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function average(array)&#123;</div><div class="line">  var result = 0;</div><div class="line">  var arrLength = array.length;</div><div class="line">  for(var i = 0; i &lt; arrLength; i++)&#123;</div><div class="line">    result += array[i];</div><div class="line">  &#125;</div><div class="line">  return result/arrLength;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">var testArray = [5,3,4]</div><div class="line">console.log(&quot;평균값 : &quot; + average(testArray));</div></pre></td></tr></table></figure>
+<h4 id="다른분의-코딩을-참고한-코드-리펙토링"><a href="#다른분의-코딩을-참고한-코드-리펙토링" class="headerlink" title="다른분의 코딩을 참고한 코드 리펙토링"></a>다른분의 코딩을 참고한 코드 리펙토링</h4><p>ES6문법으로 코드 리펙토링해보았습니다.<br>우선 let 선언으로 정의된 블록내에서만 존재하는 지역변수로 설정하고,<br>for of문을 사용하여 각 배열 값이 자동으로 더해지게 하였습니다.<br>주의사항 : for of문의 경우 브라우저 호환이 안되는 경우가 많습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function average(array)&#123;</div><div class="line">  let result = 0;</div><div class="line">  for(let item of array)&#123;</div><div class="line">    result += item;</div><div class="line">  &#125;</div><div class="line">  return result/array.length;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">var testArray = [5,3,4]</div><div class="line">console.log(&quot;평균값 : &quot; + average(testArray));</div></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="external"><strong>for of문</strong></a><br>for…of 문(statement)은 반복가능한 객체 (Array, Map, Set, String, TypedArray, arguments 객체 등을 포함)에 대해서 반복하고 각 개별 속성값에 대해 실행되는 문이 있는 사용자 정의 반복 후크를 호출하는 루프를 생성합니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -407,7 +409,7 @@ def average(list):함수를 완성해서 매개변수 list의 평균값을 retur
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

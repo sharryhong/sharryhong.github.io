@@ -20,13 +20,15 @@
 어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.
 
 약수(divisor)는 어떤 정수를 나누어 떨어지게 하는, 0이 아닌 정">
-<meta property="og:updated_time" content="2017-01-30T04:37:38.111Z">
+<meta property="og:image" content="https://sharryhong.github.io/image/al.jpg">
+<meta property="og:updated_time" content="2017-06-04T12:46:05.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorism - 약수의 합 (JavaScript)">
 <meta name="twitter:description" content="알고리즘 14. 약수의 합 (JavaScript)
 어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.
 
 약수(divisor)는 어떤 정수를 나누어 떨어지게 하는, 0이 아닌 정">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/al.jpg">
     
 
     
@@ -166,15 +168,15 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><img src="/image/al.jpg" alt="tryhelloworld"></p>
 <h2 id="알고리즘-14-약수의-합-JavaScript"><a href="#알고리즘-14-약수의-합-JavaScript" class="headerlink" title="알고리즘 14. 약수의 합 (JavaScript)"></a>알고리즘 14. 약수의 합 (JavaScript)</h2><blockquote>
 <p>어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.</p>
 </blockquote>
 <p>약수(divisor)는 어떤 정수를 나누어 떨어지게 하는, 0이 아닌 정수를 말하며,<br>음의 정수도 약수가 되지만 일반적으로 양의 약수만 다룹니다.</p>
-<h4 id="나의-코딩"><a href="#나의-코딩" class="headerlink" title="나의 코딩"></a>나의 코딩</h4><p>1) 약수는 나눠 떨어지는 정수를 구하면 됩니다.<br>for문으로 1부터 해당 값까지, % 나머지 값이 0인 값을 구하면 될 것 같습니다. </p>
+<h4 id="나의-코딩"><a href="#나의-코딩" class="headerlink" title="나의 코딩"></a>나의 코딩</h4><p>1) 약수는 나눠 떨어지는 정수를 구하면 됩니다.<br>for문으로 1부터 해당 값까지, % 나머지 값이 0인 값을 구하면 될 것 같습니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function sumDivisor(num) &#123;</div><div class="line">	var answer = 0;</div><div class="line"></div><div class="line">	for(var i = 1; i &lt;= num; i++) &#123;</div><div class="line">		if(num % i === 0) &#123;</div><div class="line">			answer += i;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return answer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 아래는 테스트로 출력해 보기 위한 코드입니다.</div><div class="line">console.log(sumDivisor(12));</div></pre></td></tr></table></figure>
 <blockquote>
-<p>생각과 그대로 잘 실행이 되었습니다. ^^ </p>
+<p>생각과 그대로 잘 실행이 되었습니다. ^^</p>
 </blockquote>
 
         </div>
@@ -404,7 +406,7 @@
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

@@ -8,22 +8,24 @@
     
         <meta name="keywords" content="JavaScript,객체지향,캡슐화" />
     
-    <meta name="description" content="캡슐화 (encapsulation)객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다. 
-일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다. 
-ES5 소스 예시1234567891011121314151617181920// MyParent 클래스funct">
+    <meta name="description" content="캡슐화 (encapsulation)객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다.
+일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다.
+ES5 소스 예시1234567891011121314151617181920// MyParent 클래스functio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 객체지향 - 캡슐화">
 <meta property="og:url" content="https://sharryhong.github.io/2017/02/06/javascript-oop03/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="캡슐화 (encapsulation)객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다. 
-일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다. 
-ES5 소스 예시1234567891011121314151617181920// MyParent 클래스funct">
-<meta property="og:updated_time" content="2017-02-06T08:02:29.112Z">
+<meta property="og:description" content="캡슐화 (encapsulation)객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다.
+일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다.
+ES5 소스 예시1234567891011121314151617181920// MyParent 클래스functio">
+<meta property="og:image" content="https://sharryhong.github.io/image/oop.jpg">
+<meta property="og:updated_time" content="2017-06-04T12:51:33.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 객체지향 - 캡슐화">
-<meta name="twitter:description" content="캡슐화 (encapsulation)객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다. 
-일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다. 
-ES5 소스 예시1234567891011121314151617181920// MyParent 클래스funct">
+<meta name="twitter:description" content="캡슐화 (encapsulation)객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다.
+일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다.
+ES5 소스 예시1234567891011121314151617181920// MyParent 클래스functio">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/oop.jpg">
     
 
     
@@ -163,11 +165,11 @@ ES5 소스 예시1234567891011121314151617181920// MyParent 클래스funct">
         
         
         <div class="article-entry" itemprop="articleBody">
-            
-<h2 id="캡슐화-encapsulation"><a href="#캡슐화-encapsulation" class="headerlink" title="캡슐화 (encapsulation)"></a>캡슐화 (encapsulation)</h2><p>객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다. </p>
-<p>일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다. </p>
-<p>ES5 소스 예시<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// MyParent 클래스</div><div class="line">function MyParent() &#123;</div><div class="line">	this.property01 = 10; </div><div class="line">&#125;</div><div class="line">// 메소드 </div><div class="line">MyParent.prototype.method01 = function() &#123;</div><div class="line">	this.property01 = 100;  // 1)객체 내부에서 접근 </div><div class="line">&#125;</div><div class="line">// 인스턴스 생성</div><div class="line">var my01 = new MyParent();</div><div class="line">my01.method01(); 		// 2)객체 외부에서 접근 </div><div class="line"></div><div class="line">// MyChild 클래스  </div><div class="line">function MyChild() &#123;</div><div class="line">&#125;</div><div class="line">// 상속</div><div class="line">MyChild.prototype = new MyParent();</div><div class="line">MyChild.prototype.method02 = function() &#123;</div><div class="line">	this.method01(); 	// 3) 자식 객체에서 부모 메소드 접근 </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>객체지향 프로그래밍 에서 </p>
+            <p><img src="/image/oop.jpg" alt="JavaScript OOP"></p>
+<h2 id="캡슐화-encapsulation"><a href="#캡슐화-encapsulation" class="headerlink" title="캡슐화 (encapsulation)"></a>캡슐화 (encapsulation)</h2><p>객체의 중요한 프로퍼티(데이터)와 메소드(기능)를 외부에서 접근하지 못하게 하는 작업을 말합니다.</p>
+<p>일반적으로 객체 내부의 프로퍼티, 메소드는 1)객체 내부, 2)객체 외부, 3)자식 객체에서 접근해 사용합니다.</p>
+<p>ES5 소스 예시<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// MyParent 클래스</div><div class="line">function MyParent() &#123;</div><div class="line">	this.property01 = 10;</div><div class="line">&#125;</div><div class="line">// 메소드</div><div class="line">MyParent.prototype.method01 = function() &#123;</div><div class="line">	this.property01 = 100;  // 1)객체 내부에서 접근</div><div class="line">&#125;</div><div class="line">// 인스턴스 생성</div><div class="line">var my01 = new MyParent();</div><div class="line">my01.method01(); 		// 2)객체 외부에서 접근</div><div class="line"></div><div class="line">// MyChild 클래스  </div><div class="line">function MyChild() &#123;</div><div class="line">&#125;</div><div class="line">// 상속</div><div class="line">MyChild.prototype = new MyParent();</div><div class="line">MyChild.prototype.method02 = function() &#123;</div><div class="line">	this.method01(); 	// 3) 자식 객체에서 부모 메소드 접근</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>객체지향 프로그래밍 에서</p>
 <table>
 <thead>
 <tr>
@@ -198,8 +200,8 @@ ES5 소스 예시1234567891011121314151617181920// MyParent 클래스funct">
 </tr>
 </tbody>
 </table>
-<p>자바스크립트 ES5에서는 위와 같은 접근지정자 문법을 지원하지 않기 때문에 아래와 같이 표현합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function MyClass() &#123;</div><div class="line"></div><div class="line">	// public 프로퍼티</div><div class="line">	this.property01 = 10; </div><div class="line"></div><div class="line">	// private, protected 프로퍼티</div><div class="line">	this._proterty02 = 20;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// public 메소드 </div><div class="line">MyClass.prototype.method01 = function() &#123;&#125;</div><div class="line"></div><div class="line">// private, protected 메소드</div><div class="line">MyClass.prototype._method02 = function() &#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>자바스크립트에서는 public만 지원하기 때문에 위와같이 약속하여 사용할 뿐, 객체 외부에서 접근이 가능합니다. </p>
+<p>자바스크립트 ES5에서는 위와 같은 접근지정자 문법을 지원하지 않기 때문에 아래와 같이 표현합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function MyClass() &#123;</div><div class="line"></div><div class="line">	// public 프로퍼티</div><div class="line">	this.property01 = 10;</div><div class="line"></div><div class="line">	// private, protected 프로퍼티</div><div class="line">	this._proterty02 = 20;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// public 메소드</div><div class="line">MyClass.prototype.method01 = function() &#123;&#125;</div><div class="line"></div><div class="line">// private, protected 메소드</div><div class="line">MyClass.prototype._method02 = function() &#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>자바스크립트에서는 public만 지원하기 때문에 위와같이 약속하여 사용할 뿐, 객체 외부에서 접근이 가능합니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -428,7 +430,7 @@ ES5 소스 예시1234567891011121314151617181920// MyParent 클래스funct">
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

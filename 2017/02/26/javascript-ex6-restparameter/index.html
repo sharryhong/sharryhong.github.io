@@ -8,19 +8,21 @@
     
         <meta name="keywords" content="ES6,JavaScript,rest parameter" />
     
-    <meta name="description" content="rest parameter(나머지 파라미터 ...)일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다. 
-1234567function addNum(...numbers) &amp;#123;  return numbers.reduce((sum, number) =&amp;gt; &amp;#123;    return sum + number;  &amp;#125;, 0);&amp;#125;addNum">
+    <meta name="description" content="rest parameter(나머지 파라미터 ...)일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다.
+1234567function addNum(...numbers) &amp;#123;  return numbers.reduce((sum, number) =&amp;gt; &amp;#123;    return sum + number;  &amp;#125;, 0);&amp;#125;addNum(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript ES6 문법 - rest parameter">
 <meta property="og:url" content="https://sharryhong.github.io/2017/02/26/javascript-ex6-restparameter/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="rest parameter(나머지 파라미터 ...)일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다. 
-1234567function addNum(...numbers) &amp;#123;  return numbers.reduce((sum, number) =&amp;gt; &amp;#123;    return sum + number;  &amp;#125;, 0);&amp;#125;addNum">
-<meta property="og:updated_time" content="2017-02-28T16:26:00.799Z">
+<meta property="og:description" content="rest parameter(나머지 파라미터 ...)일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다.
+1234567function addNum(...numbers) &amp;#123;  return numbers.reduce((sum, number) =&amp;gt; &amp;#123;    return sum + number;  &amp;#125;, 0);&amp;#125;addNum(">
+<meta property="og:image" content="https://sharryhong.github.io/image/es6.png">
+<meta property="og:updated_time" content="2017-06-04T12:50:59.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript ES6 문법 - rest parameter">
-<meta name="twitter:description" content="rest parameter(나머지 파라미터 ...)일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다. 
-1234567function addNum(...numbers) &amp;#123;  return numbers.reduce((sum, number) =&amp;gt; &amp;#123;    return sum + number;  &amp;#125;, 0);&amp;#125;addNum">
+<meta name="twitter:description" content="rest parameter(나머지 파라미터 ...)일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다.
+1234567function addNum(...numbers) &amp;#123;  return numbers.reduce((sum, number) =&amp;gt; &amp;#123;    return sum + number;  &amp;#125;, 0);&amp;#125;addNum(">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/es6.png">
     
 
     
@@ -160,15 +162,15 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
-<h3 id="rest-parameter-나머지-파라미터"><a href="#rest-parameter-나머지-파라미터" class="headerlink" title="rest parameter(나머지 파라미터 ...)"></a>rest parameter(나머지 파라미터 <code>...</code>)</h3><p>일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다. </p>
+            <p><img src="/image/es6.png" alt="JavaScript"></p>
+<h3 id="rest-parameter-나머지-파라미터"><a href="#rest-parameter-나머지-파라미터" class="headerlink" title="rest parameter(나머지 파라미터 ...)"></a>rest parameter(나머지 파라미터 <code>...</code>)</h3><p>일정하지 않은 갯수의 파라미터를 넘길 때 유용합니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function addNum(...numbers) &#123;</div><div class="line">  return numbers.reduce((sum, number) =&gt; &#123;</div><div class="line">    return sum + number;</div><div class="line">  &#125;, 0);</div><div class="line">&#125;</div><div class="line"></div><div class="line">addNum(1,2,3,4,5);</div></pre></td></tr></table></figure>
-<p>arguments와 비교해보면 rest parameter의 장점이 드러납니다. </p>
+<p>arguments와 비교해보면 rest parameter의 장점이 드러납니다.</p>
 <p><strong>ES5이하</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function arr() &#123;</div><div class="line">  console.log(arguments); // 유사배열인 [1,2,3,4,5,true,null,undefined]</div><div class="line">  var arg = Array.prototype.slice.call(arguments, 2); </div><div class="line">  console.log(arg); // [3,4,5,true,null,undefined]</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr(1,2,3,4,5,true,null,undefined);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function arr() &#123;</div><div class="line">  console.log(arguments); // 유사배열인 [1,2,3,4,5,true,null,undefined]</div><div class="line">  var arg = Array.prototype.slice.call(arguments, 2);</div><div class="line">  console.log(arg); // [3,4,5,true,null,undefined]</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr(1,2,3,4,5,true,null,undefined);</div></pre></td></tr></table></figure>
 <p>이렇게 유사배열을 배열로 사용하려면 <code>Array.prototype.slice.call</code> 방식을 사용했습니다.</p>
 <p><strong>ES6</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function arr(x , y, ...rest) &#123;</div><div class="line">  console.log(rest); </div><div class="line">&#125;</div><div class="line"></div><div class="line">arr(1,2,3,4,5,true,null,undefined);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function arr(x , y, ...rest) &#123;</div><div class="line">  console.log(rest);</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr(1,2,3,4,5,true,null,undefined);</div></pre></td></tr></table></figure>
 <p>rest parameter방식을 사용하면 유사배열이 아닌 실제 배열로 반환합니다. <code>[3,4,5,true,null,undefined]</code></p>
 <h3 id="ES6-포스팅"><a href="#ES6-포스팅" class="headerlink" title="ES6 포스팅"></a>ES6 포스팅</h3><p><a href="https://sharryhong.github.io/2016/12/25/javascript-es6/">변수선언 let, const</a><br><a href="https://sharryhong.github.io/2017/02/02/javascript-es6-blocks/">Blocks and IIFEs</a><br><a href="https://sharryhong.github.io/2017/02/03/javascript-es6-string/">Strings 문자열표기법 등</a><br><a href="https://sharryhong.github.io/2016/12/26/javascript-es6-arrow-functions/">Arrow functions</a><br><a href="https://sharryhong.github.io/2017/02/06/javascript-es6-class/">Class</a><br><a href="https://sharryhong.github.io/2017/02/26/javascript-ex6-restparameter/">rest parameter</a><br><a href="https://sharryhong.github.io/2017/02/27/javascript-ex6-spread-operator/">spread operator</a><br><a href="https://sharryhong.github.io/2017/03/01/javascript-ex6-default-parameter/">default parameter</a></p>
 
@@ -399,7 +401,7 @@
                             <a href="/2017/03/03/database-mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/image/mongodb.png)" alt="MongoDB Window 설치" class="thumbnail-image"></span>
     
     
 </a>

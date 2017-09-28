@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Node.js란 | H-web Blog</title>
+    <title>Node.js 개념과 특징 | H-web Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="node.js,NVM" />
@@ -11,15 +11,15 @@
     <meta name="description" content="Node.jsJavaScript를 이용해서 서버를 만들 수 있는 개발도구속도가 빠릅니다.짧은 코드로 쉽게 서버를 만들 수 있습니다.성능이 뛰어나고 안정성과 보안도 검증된 서버로서 실무에 적합합니다.Node.js를 사용하는 대표기업으로 페이팔, 이베이, 야후 등이 있습니다.
 크롬의 V8 자바스크립트 엔진 위에서 실행됩니다.네트워킹 기능을 담당하는 Socke">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js란">
+<meta property="og:title" content="Node.js 개념과 특징">
 <meta property="og:url" content="https://sharryhong.github.io/2017/09/27/nodejs01/index.html">
 <meta property="og:site_name" content="H-web Blog">
 <meta property="og:description" content="Node.jsJavaScript를 이용해서 서버를 만들 수 있는 개발도구속도가 빠릅니다.짧은 코드로 쉽게 서버를 만들 수 있습니다.성능이 뛰어나고 안정성과 보안도 검증된 서버로서 실무에 적합합니다.Node.js를 사용하는 대표기업으로 페이팔, 이베이, 야후 등이 있습니다.
 크롬의 V8 자바스크립트 엔진 위에서 실행됩니다.네트워킹 기능을 담당하는 Socke">
 <meta property="og:image" content="https://sharryhong.github.io/image/nodejs.png">
-<meta property="og:updated_time" content="2017-09-28T04:12:09.939Z">
+<meta property="og:updated_time" content="2017-09-28T05:02:55.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js란">
+<meta name="twitter:title" content="Node.js 개념과 특징">
 <meta name="twitter:description" content="Node.jsJavaScript를 이용해서 서버를 만들 수 있는 개발도구속도가 빠릅니다.짧은 코드로 쉽게 서버를 만들 수 있습니다.성능이 뛰어나고 안정성과 보안도 검증된 서버로서 실무에 적합합니다.Node.js를 사용하는 대표기업으로 페이팔, 이베이, 야후 등이 있습니다.
 크롬의 V8 자바스크립트 엔진 위에서 실행됩니다.네트워킹 기능을 담당하는 Socke">
 <meta name="twitter:image" content="https://sharryhong.github.io/image/nodejs.png">
@@ -144,7 +144,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Node.js란
+        Node.js 개념과 특징
         </h1>
     
 
@@ -167,7 +167,7 @@
 <p>크롬의 V8 자바스크립트 엔진 위에서 실행됩니다.<br>네트워킹 기능을 담당하는 Socket(소켓), http 라이브러리 등의 기본기능이 있습니다.<br>몽고디비(MongoDB)를 사용하면 자바스크립트에서 사용하는 객체를 그대로 저장할 수 있으므로 데이터베이스를 다루는 것도 쉬워집니다.</p>
 <h3 id="대표-특징"><a href="#대표-특징" class="headerlink" title="대표 특징"></a>대표 특징</h3><p><strong>1) 비동기 입출력(Non-Blocking I/O) 방식</strong><br>하나의 요청 처리가 끝날 때까지 기다리지 않고 다른 요청을 동시에 처리할 수 있는 방식</p>
 <p><strong>2) 이벤트 기반 입출력(Event driven I/O) 방식</strong><br>파일 시스템이 이벤트와 함께 호출하는 방식<br>예를들어 소켓이나 HTTP 프로토콜을 사용해 데이터를 송수신하는 부분에도 이벤트 처리 방식을 그대로 사용할 수 있습니다.</p>
-<p><strong>3) 모듈</strong><br>관리하기 편하도록 기능을 별도의 모듈 파일로 분리시키고 필요할 때 불러올 수 있습니다.<br>그 형태는 CommonJs* 표준 스펙을 따릅니다.<br>예를들어 자바스크립트 코드의 일부를 별도의 파일 module_1.js로 저장(이 파일이 모듈)<br>이 코드를 사용하고 싶다면 require()함수로 모듈을 호출합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var module_1 = require(&apos;module_1&apos;)</div></pre></td></tr></table></figure></p>
+<p><strong>3) 모듈</strong><br>재사용하기 좋고 관리하기 편하도록 기능을 별도의 모듈 파일로 분리시키고 필요할 때 불러올 수 있습니다.<br>그 형태는 CommonJs* 표준 스펙을 따릅니다.<br>예를들어 자바스크립트 코드의 일부를 별도의 파일 module_1.js로 저장(이 파일이 모듈)<br>이 코드를 사용하고 싶다면 require()함수로 모듈을 호출합니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var module_1 = require(&apos;module_1&apos;)</div></pre></td></tr></table></figure></p>
 <p>여러 개의 모듈을 합쳐서 하나의 패키지(package)로 만들어두면, npm 프로그램으로 손쉽게 패키지를 설치하여 사용할 수 있습니다.<br>이미 만들어 놓은 모듈이 굉장히 많아 개발자가 새로운 기능을 만들 필요가 없습니다.</p>
 <h6 id="CommonJs"><a href="#CommonJs" class="headerlink" title="CommonJs?"></a>CommonJs?</h6><p>자바스크립트를 브라우저뿐 아니라 서버 쪽 프로그램이나 pc용 프로그램에서도 사용하려고 조직한 자발적인 워킹 그룹.<br>CommonJs 표준스펙은 자바스크립트 코드를 별도의 모듈 파일로 분리시키고 필요할 때 불러와 사용할 수 있는 방식을 정의해 둔 표준</p>
 <p><strong>참고 문서</strong><br>Do it! Node.js 프로그래밍</p>
@@ -359,7 +359,7 @@
                             <a href="/2017/09/27/nodejs01/" class="thumbnail">
     
     
-        <span style="background-image:url(/image/nodejs.png)" alt="Node.js란" class="thumbnail-image"></span>
+        <span style="background-image:url(/image/nodejs.png)" alt="Node.js 개념과 특징" class="thumbnail-image"></span>
     
     
 </a>
@@ -368,7 +368,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Back-End/">Back-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Back-End/Nodejs/">Nodejs</a></p>
-                            <p class="item-title"><a href="/2017/09/27/nodejs01/" class="title">Node.js란</a></p>
+                            <p class="item-title"><a href="/2017/09/27/nodejs01/" class="title">Node.js 개념과 특징</a></p>
                             <p class="item-date"><time datetime="2017-09-27T02:56:46.000Z" itemprop="datePublished">2017-09-27</time></p>
                         </div>
                     </li>

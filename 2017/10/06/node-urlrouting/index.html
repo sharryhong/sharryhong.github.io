@@ -8,17 +8,26 @@
     
         <meta name="keywords" content="node.js,express,Routing" />
     
-    <meta name="description" content="라우팅(Routing)이란?네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정">
+    <meta name="description" content="라우팅(Routing)이란?네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정
+GET 요청 처리123app.get(&amp;apos;/&amp;apos;, function(req, res) &amp;#123; // url path, 콜백함수  res.sendFile(__dirname + &amp;quot;/public/main.html&amp;quot;)&amp;#125;)
+
+비동기로 처리됩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="02. URL Routing 처리하기">
 <meta property="og:url" content="https://sharryhong.github.io/2017/10/06/node-urlrouting/index.html">
 <meta property="og:site_name" content="H-web Blog">
-<meta property="og:description" content="라우팅(Routing)이란?네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정">
+<meta property="og:description" content="라우팅(Routing)이란?네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정
+GET 요청 처리123app.get(&amp;apos;/&amp;apos;, function(req, res) &amp;#123; // url path, 콜백함수  res.sendFile(__dirname + &amp;quot;/public/main.html&amp;quot;)&amp;#125;)
+
+비동기로 처리됩">
 <meta property="og:image" content="https://sharryhong.github.io/image/nodejs.png">
-<meta property="og:updated_time" content="2017-10-06T09:24:15.140Z">
+<meta property="og:updated_time" content="2017-10-06T10:45:50.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="02. URL Routing 처리하기">
-<meta name="twitter:description" content="라우팅(Routing)이란?네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정">
+<meta name="twitter:description" content="라우팅(Routing)이란?네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정
+GET 요청 처리123app.get(&amp;apos;/&amp;apos;, function(req, res) &amp;#123; // url path, 콜백함수  res.sendFile(__dirname + &amp;quot;/public/main.html&amp;quot;)&amp;#125;)
+
+비동기로 처리됩">
 <meta name="twitter:image" content="https://sharryhong.github.io/image/nodejs.png">
     
 
@@ -160,7 +169,15 @@
         
         <div class="article-entry" itemprop="articleBody">
             <p><img src="/image/nodejs.png" alt="Node.js"></p>
-<h3 id="라우팅-Routing-이란"><a href="#라우팅-Routing-이란" class="headerlink" title="라우팅(Routing)이란?"></a><a href="https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B0%ED%8C%85" target="_blank" rel="external">라우팅(Routing)이란?</a></h3><p>네트워크 안에서 통신 데이터를 보낼 경로를 선택하는 과정</p>
+<p><strong><a href="https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B0%ED%8C%85" target="_blank" rel="external">라우팅(Routing)이란?</a></strong><br>네트워크 안에서 통신 데이터를 보낼 <strong>경로</strong>를 선택하는 과정</p>
+<h3 id="GET-요청-처리"><a href="#GET-요청-처리" class="headerlink" title="GET 요청 처리"></a>GET 요청 처리</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(&apos;/&apos;, function(req, res) &#123; // url path, 콜백함수</div><div class="line">  res.sendFile(__dirname + &quot;/public/main.html&quot;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>비동기로 처리됩니다.</li>
+<li>절대경로를 적어줘야합니다. node에서 제공해주는 <code>__dirname</code> : 현재까지의 경로</li>
+<li>root로 접속했을 때 public 폴더에 main.html 파일을 클라이언트에 보내줍니다.</li>
+</ul>
+<p><strong>관련 포스팅</strong><br><a href="https://sharryhong.github.io/2017/10/06/back-get-post/">GET과 POST 요청</a></p>
+<p><strong>참고 자료</strong><br><a href="https://www.inflearn.com/course/node-js-%EC%9B%B9%EA%B0%9C%EB%B0%9C/" target="_blank" rel="external">인프런 Node.js강의</a></p>
 
         </div>
         <footer class="article-footer">

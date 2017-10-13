@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Sliding Puzzle Game - JavaScript, Electron | H-web Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="JavaScript,Electron" />
+    
+    <meta name="description" content="JavaScript로 숫자퍼즐 게임를 만들어보라는 2차 코딩 테스트!가 주어졌었습니다.UI는 Google검색으로 가장 마음에 드는 것을 정해 비슷하게 CSS로 만들어보았습니다.이 퍼즐 게임 또한 한정된 시간내에서 최선을 다해 만들었던 과제입니다.
+
+결과화면 보기해당 소스 보기
+
+특징 및 기능
+easy, hard모드는 radio 버튼의 value로 정해지고">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sliding Puzzle Game - JavaScript, Electron">
+<meta property="og:url" content="https://sharryhong.github.io/2017/10/13/project-puzzle/index.html">
+<meta property="og:site_name" content="H-web Blog">
+<meta property="og:description" content="JavaScript로 숫자퍼즐 게임를 만들어보라는 2차 코딩 테스트!가 주어졌었습니다.UI는 Google검색으로 가장 마음에 드는 것을 정해 비슷하게 CSS로 만들어보았습니다.이 퍼즐 게임 또한 한정된 시간내에서 최선을 다해 만들었던 과제입니다.
+
+결과화면 보기해당 소스 보기
+
+특징 및 기능
+easy, hard모드는 radio 버튼의 value로 정해지고">
+<meta property="og:image" content="https://sharryhong.github.io/image/puzzle.jpg">
+<meta property="og:updated_time" content="2017-10-13T13:31:29.764Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sliding Puzzle Game - JavaScript, Electron">
+<meta name="twitter:description" content="JavaScript로 숫자퍼즐 게임를 만들어보라는 2차 코딩 테스트!가 주어졌었습니다.UI는 Google검색으로 가장 마음에 드는 것을 정해 비슷하게 CSS로 만들어보았습니다.이 퍼즐 게임 또한 한정된 시간내에서 최선을 다해 만들었던 과제입니다.
+
+결과화면 보기해당 소스 보기
+
+특징 및 기능
+easy, hard모드는 radio 버튼의 value로 정해지고">
+<meta name="twitter:image" content="https://sharryhong.github.io/image/puzzle.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/image/snoopy02.png" />
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo">H-Web</a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Hong&#39;s Web Development Blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Back-End/">Back-End</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Back-End/Database/">Database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Back-End/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Back-End/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Back-End/Spring/">Spring</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Back-End/기타/">기타</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/">Front-End</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/AJAX/">AJAX</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/DOM-API/">DOM API</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/">Portfolio</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/">plus forWeb!</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/Algorism/">Algorism</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/Bookmark/">Bookmark</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/plus-forWeb/Computer-Science/">Computer Science</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Portfolio/Free-Project/">Free Project</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-project-puzzle" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Sliding Puzzle Game - JavaScript, Electron
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/10/13/project-puzzle/" class="article-date">
+    <time datetime="2017-10-13T13:02:44.000Z" itemprop="datePublished">2017-10-13</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>JavaScript로 숫자퍼즐 게임를 만들어보라는 2차 코딩 테스트!가 주어졌었습니다.<br>UI는 Google검색으로 가장 마음에 드는 것을 정해 비슷하게 CSS로 만들어보았습니다.<br>이 퍼즐 게임 또한 한정된 시간내에서 최선을 다해 만들었던 과제입니다.</p>
+</blockquote>
+<p><a href="https://sharryhong.github.io/full-stack/test02-sliding-puzzle/index.html">결과화면 보기</a><br><a href="https://github.com/sharryhong/full-stack/tree/master/test02-sliding-puzzle" target="_blank" rel="external">해당 소스 보기</a></p>
+<p><img src="/image/puzzle.jpg" alt="결과 이미지"></p>
+<h3 id="특징-및-기능"><a href="#특징-및-기능" class="headerlink" title="특징 및 기능"></a>특징 및 기능</h3><ul>
+<li>easy, hard모드는 radio 버튼의 value로 정해지고, 현재 easy는 10번, value는 100번 섞이게 되어있습니다.</li>
+<li>처음에 랜덤으로 숫자를 섞으면 결과가 나오지 않을 수도 있다고 하여, 실제로 섞을 수 있는 경우(빈칸의 상하좌우)만 섞이게 하였습니다.</li>
+</ul>
+<h3 id="주요-코드"><a href="#주요-코드" class="headerlink" title="주요 코드"></a>주요 코드</h3><h4 id="UI를-만드는-부분"><a href="#UI를-만드는-부분" class="headerlink" title="UI를 만드는 부분"></a>UI를 만드는 부분</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function displayNum() &#123;</div><div class="line">  var html = &apos;&apos;</div><div class="line">  for (let i = 0; i &lt; xCol; i++) &#123;</div><div class="line">    html += &apos;&lt;tr&gt;&apos;</div><div class="line">    for (let j = 0; j &lt; yRow; j++) &#123;</div><div class="line">      if (numArray[i][j] == &apos;&apos;) &#123;</div><div class="line">        html += &apos;&lt;td id=&quot;blank&quot; class=&quot;btn&quot; data-x=&quot;&apos;+ j + &apos;&quot; data-y=&quot;&apos; + i + &apos;&quot;&gt;&apos; + numArray[i][j] + &apos;&lt;/td&gt;&apos;</div><div class="line">      &#125; else &#123;</div><div class="line">        html += &apos;&lt;td class=&quot;btn num&quot; data-x=&quot;&apos;+ j + &apos;&quot; data-y=&quot;&apos; + i + &apos;&quot;&gt;&apos; + numArray[i][j] + &apos;&lt;/td&gt;&apos;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    html += &apos;&lt;/tr&gt;&apos;</div><div class="line">  &#125;</div><div class="line">  puzzleTable.html(html)</div></pre></td></tr></table></figure>
+<ul>
+<li>변수 xCol, yRow은 퍼즐의 가로, 세로 개수 입니다.</li>
+<li>엘리먼트를 만들면서 data-x, data-y라는 속성을 만들어주어,<br>나중에 <code>id = &quot;blank&quot;</code>인 <strong>빈칸의 상하좌우 움직일 수 있는 앨리먼트</strong>인지 알아냅니다.</li>
+</ul>
+<h4 id="사용기술-HTML-CSS-JavaScript-jQuery-Electron"><a href="#사용기술-HTML-CSS-JavaScript-jQuery-Electron" class="headerlink" title="사용기술 : HTML, CSS, JavaScript, jQuery, Electron"></a>사용기술 : HTML, CSS, JavaScript, jQuery, Electron</h4><p>Electron은 웹 기술로 데스크톱 애플리케이션을 만들게 해주는 프레임워크입니다.<br><a href="https://electron.atom.io/docs/tutorial/quick-start/" target="_blank" rel="external">사용 방법은 여기 참고해주세요.</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sharryhong.github.io/2017/10/13/project-puzzle/" data-id="cj8q16x6f009aesnrlo4wgjxa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/sharryhong" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/10/13/project-calculator/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">계산기(calculator) - JavaScript, Electron</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Back-End/">Back-End</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Back-End/Database/">Database</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Back-End/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Back-End/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Back-End/Spring/">Spring</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Back-End/기타/">기타</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/AJAX/">AJAX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/CSS-SASS/">CSS/SASS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/DOM-API/">DOM API</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/JavaScript/">JavaScript</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/웹접근성/">웹접근성</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/">Portfolio</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Free-Project/">Free Project</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Portfolio/Portfolio/">Portfolio</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/">plus forWeb!</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/Algorism/">Algorism</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/Bookmark/">Bookmark</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/plus-forWeb/Computer-Science/">Computer Science</a><span class="category-list-count">4</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/13/project-puzzle/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/puzzle.jpg)" alt="Sliding Puzzle Game - JavaScript, Electron" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Portfolio/Free-Project/">Free Project</a></p>
+                            <p class="item-title"><a href="/2017/10/13/project-puzzle/" class="title">Sliding Puzzle Game - JavaScript, Electron</a></p>
+                            <p class="item-date"><time datetime="2017-10-13T13:02:44.000Z" itemprop="datePublished">2017-10-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/13/project-calculator/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/cal.jpg)" alt="계산기(calculator) - JavaScript, Electron" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Portfolio/">Portfolio</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Portfolio/Free-Project/">Free Project</a></p>
+                            <p class="item-title"><a href="/2017/10/13/project-calculator/" class="title">계산기(calculator) - JavaScript, Electron</a></p>
+                            <p class="item-date"><time datetime="2017-10-13T12:33:11.000Z" itemprop="datePublished">2017-10-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/06/back-get-post/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/http.png)" alt="GET, POST요청의 차이점" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/plus-forWeb/">plus forWeb!</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/plus-forWeb/Computer-Science/">Computer Science</a></p>
+                            <p class="item-title"><a href="/2017/10/06/back-get-post/" class="title">GET, POST요청의 차이점</a></p>
+                            <p class="item-date"><time datetime="2017-10-06T09:37:56.000Z" itemprop="datePublished">2017-10-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/06/node-urlrouting/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/nodejs.png)" alt="02. URL Routing 처리하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Back-End/">Back-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Back-End/Nodejs/">Nodejs</a></p>
+                            <p class="item-title"><a href="/2017/10/06/node-urlrouting/" class="title">02. URL Routing 처리하기</a></p>
+                            <p class="item-date"><time datetime="2017-10-06T09:18:21.000Z" itemprop="datePublished">2017-10-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/30/node-express/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/nodejs.png)" alt="01. Express 모듈로 간단하게 웹 서버 만들기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Back-End/">Back-End</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Back-End/Nodejs/">Nodejs</a></p>
+                            <p class="item-title"><a href="/2017/09/30/node-express/" class="title">01. Express 모듈로 간단하게 웹 서버 만들기</a></p>
+                            <p class="item-date"><time datetime="2017-09-30T08:39:35.000Z" itemprop="datePublished">2017-09-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AJAX/" style="font-size: 13.33px;">AJAX</a> <a href="/tags/Algorism/" style="font-size: 16.67px;">Algorism</a> <a href="/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a> <a href="/tags/Array/" style="font-size: 13.33px;">Array</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Class/" style="font-size: 11.67px;">Class</a> <a href="/tags/Closure/" style="font-size: 10px;">Closure</a> <a href="/tags/Convention/" style="font-size: 10px;">Convention</a> <a href="/tags/DOM/" style="font-size: 11.67px;">DOM</a> <a href="/tags/ES5/" style="font-size: 11.67px;">ES5</a> <a href="/tags/ES6/" style="font-size: 18.33px;">ES6</a> <a href="/tags/Electron/" style="font-size: 11.67px;">Electron</a> <a href="/tags/Firebase/" style="font-size: 10px;">Firebase</a> <a href="/tags/Framework/" style="font-size: 10px;">Framework</a> <a href="/tags/Gallery/" style="font-size: 10px;">Gallery</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 11.67px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 13.33px;">HTTP</a> <a href="/tags/IIFE/" style="font-size: 11.67px;">IIFE</a> <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/JSON/" style="font-size: 13.33px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Module-Patton/" style="font-size: 10px;">Module Patton</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NVM/" style="font-size: 11.67px;">NVM</a> <a href="/tags/Nesting/" style="font-size: 10px;">Nesting</a> <a href="/tags/Portfolio/" style="font-size: 13.33px;">Portfolio</a> <a href="/tags/Protocol/" style="font-size: 11.67px;">Protocol</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/Realtime-Database/" style="font-size: 10px;">Realtime Database</a> <a href="/tags/Responsive/" style="font-size: 10px;">Responsive</a> <a href="/tags/Routing/" style="font-size: 10px;">Routing</a> <a href="/tags/SASS/" style="font-size: 15px;">SASS</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Strings/" style="font-size: 10px;">Strings</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TabMenu/" style="font-size: 10px;">TabMenu</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Variables/" style="font-size: 10px;">Variables</a> <a href="/tags/WAI-ARIA/" style="font-size: 10px;">WAI-ARIA</a> <a href="/tags/Web-API-Element/" style="font-size: 10px;">Web API - Element</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/arrow-functions/" style="font-size: 10px;">arrow functions</a> <a href="/tags/block/" style="font-size: 10px;">block</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/default-parameter/" style="font-size: 10px;">default parameter</a> <a href="/tags/directory/" style="font-size: 10px;">directory</a> <a href="/tags/express/" style="font-size: 11.67px;">express</a> <a href="/tags/folder/" style="font-size: 10px;">folder</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 11.67px;">jQuery</a> <a href="/tags/javascript30-com/" style="font-size: 10px;">javascript30.com</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/nodemon/" style="font-size: 10px;">nodemon</a> <a href="/tags/prototype/" style="font-size: 11.67px;">prototype</a> <a href="/tags/rest-parameter/" style="font-size: 10px;">rest parameter</a> <a href="/tags/sli-do/" style="font-size: 10px;">sli.do</a> <a href="/tags/spread-operator/" style="font-size: 10px;">spread operator</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/객체지향/" style="font-size: 13.33px;">객체지향</a> <a href="/tags/도입/" style="font-size: 10px;">도입</a> <a href="/tags/반응형/" style="font-size: 10px;">반응형</a> <a href="/tags/선택자/" style="font-size: 10px;">선택자</a> <a href="/tags/성능향상/" style="font-size: 10px;">성능향상</a> <a href="/tags/아이콘/" style="font-size: 10px;">아이콘</a> <a href="/tags/영화-API/" style="font-size: 10px;">영화 API</a> <a href="/tags/웹접근성/" style="font-size: 10px;">웹접근성</a> <a href="/tags/이벤트-버블링/" style="font-size: 10px;">이벤트 버블링</a> <a href="/tags/추상화/" style="font-size: 10px;">추상화</a> <a href="/tags/캡슐화/" style="font-size: 10px;">캡슐화</a> <a href="/tags/파일-포맷/" style="font-size: 10px;">파일 포맷</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2017 HS Hong</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sharryhong';
+    
+    
+    var disqus_url = 'https://sharryhong.github.io/2017/10/13/project-puzzle/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
